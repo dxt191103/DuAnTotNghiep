@@ -28,46 +28,31 @@
 					<h4>${message }</h4>
 					<form:form method="get" action="/home/register" modelAttribute="item">
 						<div class="group-input">
-							<label for="username">Username or email address *:</label> 
+							<label for="username">Username *:</label> 
 							<form:input path="username" type="text" id="username"/>
 						</div>
 						<div class="group-input">
 							<label for="pass">Password *:</label>
-							<form:input type="text" id="password" path="password"/>
+							<form:input type="password" id="password" path="password"/>
 						</div>
 						<div class="group-input">
 							<label for="con-pass">Fullname *:</label> 
 							<form:input type="text" id="fullname" path="fullname"/>
 						</div>
 						<div class="group-input">
+							<label for="con-pass">Phone *:</label> 
+							<form:input type="text" id="phone" path="phone"/>
+						</div>
+						<div class="group-input">
 							<label for="con-pass">Email *:</label> 
-							<form:input type="email"	id="email" path="email"/>
+							<form:input type="email" id="email" path="email"/>
 						</div>
 						
-
-						<div class="file-upload">
-							<div class="image-upload-wrap">
-								<form:input class="file-upload-input" type='file' path="photo" id="photo" 
-									onchange="readURL(this);" accept="image/*" />
-								<div class="drag-text">
-									<h3>Drag and drop a file or select add Image</h3>
-								</div>
-							</div>
-							<div class="file-upload-content">
-								<img class="file-upload-image" src="#" alt="your image" />
-								<div class="image-title-wrap">
-									<button type="button" onclick="removeUpload()"
-										class="remove-image">
-										Remove <span class="image-title">Uploaded Image</span>
-									</button>
-								</div>
 							</div>
 						</div>
 						<button type="submit" class="site-btn register-btn" formaction="/home/register/create">REGISTER</button>
 					</form:form>
-					<div class="switch-login">
-						<a href="login" class="or-login">Or Login</a>
-					</div>
+					
 				</div>
 			</div>
 		</div>
