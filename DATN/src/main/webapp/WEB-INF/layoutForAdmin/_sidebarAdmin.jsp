@@ -12,8 +12,9 @@
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="account" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Account Controller </span></a></li>
                                 <li class="sidebar-item"><a href="category" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Category Controller </span></a></li>
-                                <li class="sidebar-item"><a href="order" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Order Controller </span></a></li>
-                                <li class="sidebar-item"><a href="product" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Product Controller </span></a></li>
+                                <li class="sidebar-item"><a href="shift" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Shift Controller </span></a></li>
+                                <li class="sidebar-item"><a href="staff" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Staff Controller </span></a></li>
+                                <li class="sidebar-item"><a href="service" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Service Controller </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu"> Statistic </span></a>
