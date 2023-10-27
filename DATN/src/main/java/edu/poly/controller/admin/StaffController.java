@@ -58,7 +58,7 @@ public class StaffController {
 	@RequestMapping("/staff/create")
 	public String create(Staff item) {
 		item.setImage(item.getImage());
-		item.setStatus(item.getStatus());
+		item.setStatus(item.isStatus());
 		dao.save(item);
 		return "redirect:/admin/staffControl";
 	}
@@ -75,7 +75,7 @@ public class StaffController {
 	@RequestMapping("/staff/update")
 	public String update(Staff item) {
 		item.setImage(item.getImage());
-		item.setStatus(item.getStatus());
+		item.setStatus(item.isStatus());
 		dao.save(item);
 		return "redirect:/admin/staff/edit/" + item.getId();
 	}

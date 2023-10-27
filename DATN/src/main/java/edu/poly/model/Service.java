@@ -22,11 +22,11 @@ public class Service implements Serializable{
 	String name;
 	Double price;
 	Time time;
-	Boolean status;
+	
 		
 	
 	@Column(nullable = false, columnDefinition = "bit default 0")
-	boolean activated;
+	boolean status;
 	
 	@OneToMany(mappedBy = "service")
 	List<Sale> sale;

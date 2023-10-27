@@ -31,8 +31,8 @@ public class Staff implements Serializable{
 	Role role;
 	
 	
-	@Column(nullable = false, columnDefinition = "bit default 0")
-	boolean activated;
+
+	boolean status;
 	
 	
 	@OneToMany

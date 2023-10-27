@@ -18,8 +18,8 @@ import javax.persistence.Table;
 public class Shift {
 	@Id
 	String Id;
-	Time BeginTime;
-	Time EndTime;
+	String begintime;
+	String endtime;
 	
 	@OneToMany
 	(mappedBy = "shift")
