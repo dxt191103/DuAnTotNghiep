@@ -10,13 +10,13 @@
 		<!-- Sales Cards  -->
 		<div class="row">
 			<div class="col-6 offset-3">
-				<form:form name="qryform" id="qryform" action="/admin/product"
-					class="px-3" modelAttribute="item">
+				<form:form name="qryform" id="qryform" action="/admin/staff"
+					class="px-3" modelAttribute="item" method="post">
 					<div class="card">
 						<div class="card-header">
 							<h3 class="alert alert-info">
-								Product Control <a href="/admin/product"
-									class="btn btn-success float-right">Product List</a>
+								Staff Control <a href="/admin/staff"
+									class="btn btn-success float-right">Staff List</a>
 							</h3>
 							<div class="bg-success text-light px-3">${message }</div>
 						</div>
@@ -25,7 +25,7 @@
 								<div class="col-6">
 									<div class="form-group">
 										<form:input type="text" class="form-control" id="id" path="id"
-											disabled="true" aria-describedby="usHid"
+											 aria-describedby="usHid"
 											placeholder="Product ID" />
 										<small id="usHid" class="form-text text-muted">Product
 											ID is invalid</small>
@@ -37,10 +37,24 @@
 										<small id="nameHid" class="form-text text-muted">Product
 											Name is invalid</small>
 									</div>
+									
 									<div class="form-group">
-										<form:input type="number" class="form-control" id="price"
-											path="price" aria-describedby="priceHid" placeholder="Price" />
-										<small id="priceHid" class="form-text text-muted">Price
+										<form:input type="date" class="form-control" id="birthday"
+											 path="birthday" 
+											aria-describedby="birthdayHid" placeholder="birthday" />
+										<small id="createDateHid" class="form-text text-muted">Create
+											birthday is invalid</small>
+									</div>
+									<div class="form-group">
+										<form:input type="name" class="form-control" id="address"
+											path="Address" aria-describedby="addHid" placeholder="Address" />
+										<small id="addHid" class="form-text text-muted">Address
+											is invalid</small>
+									</div>
+									<div class="form-group">
+										<form:input type="name" class="form-control" id="phone"
+											path="Phone" aria-describedby="phoneHid" placeholder="Phone" />
+										<small id="phoneHid" class="form-text text-muted">Phone
 											is invalid</small>
 									</div>
 									<div class="form-group">
@@ -49,25 +63,33 @@
 										<small id="imageHid" class="form-text text-muted">Image
 											is invalid</small>
 									</div>
-								</div>
-								<div class="col-6">
+									<!--  div class="form-group">
+										<form:input type="text" class="form-control" id="image" path="image"
+											 aria-describedby="usHid"
+											placeholder="image ID" />
+										<small id="usHid" class="form-text text-muted">image
+											ID is invalid</small>
+									</div>-->
 									<div class="form-group">
-										<form:input type="date" class="form-control" id="createDate"
-											disabled="true" path="createDate"
-											aria-describedby="createDateHid" placeholder="createDate" />
-										<small id="createDateHid" class="form-text text-muted">Create
-											Date is invalid</small>
+										<form:input type="text" class="form-control" id="experience" path="experience"
+											 aria-describedby="usHid"
+											placeholder="experience ID" />
+										<small id="usHid" class="form-text text-muted">experience
+											ID is invalid</small>
 									</div>
-									<div class="form-group ">
-										Category:
-										<form:select path="category" cssClass="form-control">
-											<form:options items="${categories }" itemLabel="name" />
-										</form:select>
+									<div class="form-group">
+										<form:input type="text" class="form-control" id="role" path="role.id"
+											disabled="false" aria-describedby="usHid"
+											placeholder="role ID" />
+										<small id="usHid" class="form-text text-muted">Role
+											is invalid</small>
 									</div>
-									<div class="form-group ">
-										Available: <br />
-										<form:radiobuttons class="mx-3 " path="available"
-											items="${availables }" delimiter="" />
+									<div class="form-group">
+										<form:input type="text" class="form-control" id="status" path="status"
+											 aria-describedby="usHid"
+											placeholder="status ID" />
+										<small id="usHid" class="form-text text-muted">status
+											ID is invalid</small>
 									</div>
 								</div>
 							</div>
@@ -81,13 +103,13 @@
 						</div>
 						<div class="card-footer text-muted">
 							<button type="submit" class="btn btn-primary "
-								formaction="/admin/product/create">Insert</button>
+								formaction="/admin/staff/create">Insert</button>
 							<button type="submit" class="btn btn-warning"
-								formaction="/admin/product/update">Update</button>
+								formaction="/admin/staff/update">Update</button>
 							<button type="submit" class="btn btn-danger"
-								formaction="/admin/product/delete/${item.id}">Delete</button>
+								formaction="/admin/staff/delete/${items.id}">Delete</button>
 							<button type="submit" class="btn btn-success"
-								formaction="/admin/productControl">Reset</button>
+								formaction="/admin/staffControl">Reset</button>
 						</div>
 					</div>
 				</form:form>

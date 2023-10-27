@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
+                        <a href="/home/index"><i class="fa fa-home"></i> Home</a>
                         <span>Login</span>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <h2>Login</h2>
                         
                         <form action="login" method="post">
-                        <h5 class="text-danger">${message }</h5>
+                        <h5 class="text-danger">${message}</h5>
                             <div class="group-input">
                                 <label for="username">Username or email address *</label>
                                 <input type="text" id="username" name="username">
