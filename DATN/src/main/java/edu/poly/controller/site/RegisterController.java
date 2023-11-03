@@ -37,21 +37,24 @@ public class RegisterController {
 	
 	@RequestMapping("/register/create")
 	public String create(Model model, Customer item) {
-		Scanner scanner = new Scanner(System.in);
 		String username = paramService.getString("username", "");
 		String password = paramService.getString("password", "");
-		password = scanner.nextLine();
-		//JFrame frame = new JFrame("Demo");
-		if(username != "" && password.matches("\\D+")) {
-			cusDAO.save(item);
-			System.out.println("Register Successfully");
-			//model.addAttribute("message", "Account is invalid!");
-		}else {
-			//cusDAO.save(item);
-			System.out.println("Account is invalid!");
-			//model.addAttribute("message", "Register Successfully");
+		String phone = paramService.getString("phone", "");
+		// Kiểm tra username hoặc password có null hay không
+		if (username == null || password == null) {
+		  model.addAttribute("message", "Username hoặc password không được để trống!");
+		} else {
+		  // Kiểm tra phone có khớp với biểu thức chính quy hay không
+		  String regex = "0\\d{9}"; // Số điện thoại phải có 10 chữ số và bắt đầu bằng 0
+		  if (!phone.matches(regex)) {
+		    model.addAttribute("message", "Số điện thoại không hợp lệ!");
+		  } else {
+			  cusDAO.save(item);
+			  model.addAttribute("message", "Mọi thứ hợp lệ!");
+		    // Xử lý tiếp theo nếu cả ba trường đều hợp lệ
+		    // ...
+		  }
 		}
-		//cusDAO.save(item);
 		return "redirect:/home/login";
 	}
 	
