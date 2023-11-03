@@ -22,6 +22,7 @@ public class Service implements Serializable{
 	String name;
 	Double price;
 	Time time;
+	String descripsion;
 	
 		
 	
