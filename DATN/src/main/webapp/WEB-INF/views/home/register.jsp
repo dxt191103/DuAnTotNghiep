@@ -28,57 +28,46 @@
 					<h4>${message }</h4>
 					<form:form method="get" action="/home/register" modelAttribute="item">
 						<div class="group-input">
-							<label for="username">Username *:</label> 
+							<label for="username">Username or email address *:</label> 
 							<form:input path="username" type="text" id="username"/>
 						</div>
 						<div class="group-input">
 							<label for="pass">Password *:</label>
-							<form:input type="password" id="password" path="password"/>
+							<form:input type="text" id="password" path="password"/>
 						</div>
 						<div class="group-input">
 							<label for="con-pass">Fullname *:</label> 
 							<form:input type="text" id="fullname" path="fullname"/>
 						</div>
 						<div class="group-input">
-							<label for="con-pass">Phone *:</label> 
-							<form:input type="text" id="phone" path="phone"/>
-						</div>
-						<div class="group-input">
 							<label for="con-pass">Email *:</label> 
-							<form:input type="email" id="email" path="email"/>
+							<form:input type="email"	id="email" path="email"/>
 						</div>
 						
-							</div>
-						</div>
-						<!-- button type="submit" class="site-btn register-btn" formaction="/home/register/create">REGISTER</button>-->
-						<button type="button" class="site-btn register-btn" data-toggle="modal"
-							data-target="#exampleModal">REGISTER</button>
 
-						<!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1"
-							role="dialog" aria-labelledby="exampleModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Register
-											title</h5>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">Are you sure about that ???</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary"
-											data-dismiss="modal">No</button>
-										<button type="submit" formaction="/home/register/create"  class="btn btn-primary">Yes</button>
-									</div>
+						<div class="file-upload">
+							<div class="image-upload-wrap">
+								<form:input class="file-upload-input" type='file' path="photo" id="photo" 
+									onchange="readURL(this);" accept="image/*" />
+								<div class="drag-text">
+									<h3>Drag and drop a file or select add Image</h3>
+								</div>
+							</div>
+							<div class="file-upload-content">
+								<img class="file-upload-image" src="#" alt="your image" />
+								<div class="image-title-wrap">
+									<button type="button" onclick="removeUpload()"
+										class="remove-image">
+										Remove <span class="image-title">Uploaded Image</span>
+									</button>
 								</div>
 							</div>
 						</div>
+						<button type="submit" class="site-btn register-btn" formaction="/home/register/create">REGISTER</button>
 					</form:form>
-					
+					<div class="switch-login">
+						<a href="login" class="or-login">Or Login</a>
+					</div>
 				</div>
 			</div>
 		</div>
