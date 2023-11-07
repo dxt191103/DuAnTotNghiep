@@ -8,8 +8,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="breadcrumb-text product-more">
-					<a href="./home.html"><i class="fa fa-home"></i> Home</a> <a
-						href="./shop.html">Shop</a> <span>Shopping Cart</span>
+					<a href="/home/index"><i class="fa fa-home"></i> Home</a> <a
+						href="/home/shop">Shop</a> <span>Shopping Cart</span>
 				</div>
 			</div>
 		</div>
@@ -67,7 +67,7 @@
 						<div class="cart-buttons">
 							<a href="shop" class="primary-btn continue-shop">Continue
 								shopping</a> <a href="/home/cart/clear" class="primary-btn up-cart">Clear
-								cart</a> <a href="/home/index" class="primary-btn up-cart"> + Buy</a>
+								cart</a>
 						</div>
 					</div>
 					<div class="col-lg-4 offset-lg-4">
@@ -84,7 +84,6 @@
 						</div>
 					</div>
 				</div>
-			
 			</div>
 		</div>
 	</div>

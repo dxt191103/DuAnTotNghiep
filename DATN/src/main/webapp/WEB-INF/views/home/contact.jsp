@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
+                        <a href="/home/index"><i class="fa fa-home"></i> Home</a>
                         <span>Contact</span>
                     </div>
                 </div>
