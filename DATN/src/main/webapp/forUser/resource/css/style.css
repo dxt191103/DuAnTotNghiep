@@ -757,7 +757,7 @@ nav.nav-sticky {
 }
 
 .video-box {
-    background-image: url('/imgs/about-1.jpg');
+    background-image: url('/forUser/imgs/about-1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -951,7 +951,7 @@ nav.nav-sticky {
 /* ============================================ !! ============================================ */
 /* ======================== Appointment section ============================ */
 .appointment-section {
-    background-image: url('/imgs/appointment-bg.jpg');
+    background-image: url('/forUser/imgs/appointment-bg.jpg');
     background-position: center center;
     background-size: cover;
 }
@@ -1288,7 +1288,7 @@ input::placeholder {
 
 /* ========================= Counter section ====================== */
 .counter-section {
-    background-image: url('/imgs/pattern.png');
+    background-image: url('/forUser/imgs/pattern.png');
     background-position: center center;
     padding-top: 120px;
     padding-bottom: 120px;
@@ -1752,7 +1752,7 @@ footer .footer-bottom{
 /* ===================== Other Pages title ====================== */
 /* ============================================================== */
 .other-pages{
-   background-image: url('/imgs/featured-bg.jpg');
+   background-image: url('/forUser/imgs/featured-bg.jpg');
    height: 50vh !important;
 }
 

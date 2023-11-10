@@ -14,6 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.poly.model.Product;
+import edu.poly.model.ProductReport;
+import edu.poly.model.Top10;
+import edu.poly.repository.AccountDAO;
+import edu.poly.repository.OrderDetailDAO;
+import edu.poly.repository.ProductDAO;
 import edu.poly.utils.CookieService;
 import edu.poly.utils.ParamService;
 import edu.poly.utils.SessionService;
@@ -23,24 +29,10 @@ import edu.poly.utils.SessionService;
 @RequestMapping("home")
 public class HomeController {
 	
-	@Autowired
-	CookieService cookieService;
-	@Autowired
-	ParamService paramService;
-	@Autowired
-	SessionService sessionService;
-	
 	
 	// show index
 	@RequestMapping("index")
-	public String shop() {
-		/*
-		 * Pageable pageable = PageRequest.of(0, 10); Page<Top10> topList =
-		 * orderDetailDAO.getTop10(pageable); List<Product> wmList =
-		 * proDAO.findByCategoryHome("0000"); model.addAttribute("WMitems", wmList);
-		 * List<Product> mList = proDAO.findByCategoryHome("1111");
-		 * model.addAttribute("Mitems", mList); model.addAttribute("topList", topList);
-		 */
+	public String shop(Model model) {
 		
 		return "home/index";
 	}
