@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.poly.dao.CustomerDAO;
 import edu.poly.model.Customer;
-//import edu.poly.repository.AccountDAO;
-//import edu.poly.service.impl.MailerServiceImpl;
+import edu.poly.service.impl.MailerServiceImpl;
 import edu.poly.utils.ParamService;
 import edu.poly.utils.SessionService;
 import net.bytebuddy.utility.RandomString;
@@ -29,8 +28,8 @@ public class ForgotPasswordController {
 	SessionService session;
 	@Autowired
 	ParamService paramService;
-//	@Autowired
-//	MailerServiceImpl mailer;
+	@Autowired
+	MailerServiceImpl mailer;
 	@Autowired
 	ServletContext app;
 	
@@ -55,7 +54,7 @@ public class ForgotPasswordController {
 				}else {
 					user.setPassword(randomPassword);
 					dao.save(user);
-					//mailer.send(email, subject, body+randomPassword);
+					mailer.send(email, subject, body+randomPassword);
 					model.addAttribute("message", "Please check your Email!");
 				}
 		} catch (Exception e) {
