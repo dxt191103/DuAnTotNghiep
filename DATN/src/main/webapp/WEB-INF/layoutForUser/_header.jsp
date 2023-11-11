@@ -61,7 +61,7 @@
                         <li class="nav-item menu-item menu-item-has-child">
                             <a class="nav-link" href="#">Account</a>
                             <ul class="sub-menu">
-                                <li><a href="#">Login</a></li>
+                                <li><a href="login">Login</a></li>
                             </ul>
                         </li>
                     </ul>
