@@ -18,7 +18,7 @@
 								Staff Control <a href="/admin/staff"
 									class="btn btn-success float-right">Staff List</a>
 							</h3>
-							<div class="bg-success text-light px-3">${message }</div>
+							<div class="bg-success text-light px-3">${message}</div>
 						</div>
 						<div class="card-body">
 							<div class="col row">

@@ -4,6 +4,7 @@
 <!-- Slideshow -->
     <section class="page-wrapper">
       <div class="register-login-section spad">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -67,8 +68,9 @@
             </div>
         </div>
     </div>
+
     
     </section>
     
-    
- 
+    <!-- Register Form Section End -->
+
