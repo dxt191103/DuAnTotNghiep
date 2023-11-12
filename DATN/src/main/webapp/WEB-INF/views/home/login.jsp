@@ -1,26 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+    <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<!-- Slideshow -->
+    <section class="page-wrapper">
+      <div class="register-login-section spad">
 
-	
-	
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="/home/index"><i class="fa fa-home"></i> Home</a>
-                        <span>Login</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Form Section Begin -->
-
-    <!-- Register Section Begin -->
-    <div class="register-login-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -84,4 +68,9 @@
             </div>
         </div>
     </div>
+
+    
+    </section>
+    
     <!-- Register Form Section End -->
+
