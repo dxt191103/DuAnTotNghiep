@@ -58,6 +58,19 @@
 										<small id="statusHid" class="form-text text-muted">Service
 											Status is invalid</small>
 									</div>
+									<div class="form-group">
+										<form:textarea type="descripsion" class="form-control" id="descripsion"
+											path="descripsion" aria-describedby="descripsionHid"
+											placeholder="descripsion" />
+										<small id="descripsionHid" class="form-text text-muted">Service
+											Descripsion is invalid</small>
+									</div>
+									<div class="form-group">
+										<form:input type="file" class="form-control" id="image"
+											path="image" aria-describedby="imageHid" placeholder="image" />
+										<small id="imageHid" class="form-text text-muted">Image
+											is invalid</small>
+									</div>
 									
 								</div>
 							</div>
