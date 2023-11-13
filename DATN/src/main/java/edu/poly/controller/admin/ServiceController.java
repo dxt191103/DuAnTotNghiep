@@ -59,6 +59,7 @@ public class ServiceController {
 	
 	@RequestMapping("/service/create")
 	public String create(Service item) {
+		item.setImage(item.getImage());
 		dao.save(item);
 		return "redirect:/admin/serviceControl";
 	}
