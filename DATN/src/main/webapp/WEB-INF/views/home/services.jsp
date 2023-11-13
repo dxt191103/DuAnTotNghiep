@@ -20,7 +20,7 @@
             
               <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                 <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                  <img src="/forUser/img/Service/${item.image}" alt="">
+                  <img src="/forUser/imgs/Service/${item.image}" alt="" width=200px>
                   <a href="#!">
                     <div class="hover-overlay">
                       <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
@@ -30,9 +30,6 @@
               </div>
               <div class="col-md-6 col-lg-6 col-xl-6">
                 <h5>${item.name}</h5>
-                <div class="d-flex flex-row">
-                  <span>310</span>
-                </div>
                 <p class="text-truncate mb-4 mb-md-0">
                   ${item.descripsion}
                 </p>
@@ -48,12 +45,18 @@
                   </button>
                 </div>
               </div>
-              
             </div>
           </div>
            </c:forEach>
         </div>
       </div>
+      <div class="text-center">
+					<a href="/home/services?p=0" class="btn btn-primary 10">First</a>
+					<a href="/home/services?p=${page.number-1}" class="btn btn-primary">Previous</a>
+					<a href="/home/services?p=${page.number+1}" class="btn btn-primary">Next</a>
+					<a href="/home/services?p=${page.totalPages-1}"
+						class="btn btn-primary">Last</a>
+				</div>
     </div>
     </div>
     

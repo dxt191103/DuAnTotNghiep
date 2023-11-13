@@ -34,21 +34,21 @@
 								<td>${item.price}</td>
 								<td>${item.time}</td>
 								<td>${item.status}</td>
-								<td>${item.descripsion}</td>
-								<td><img src="/forUser/img/Service/${item.image}" alt=""
-									width=50% /></td>
-								<td> 
-									<a class='btn btn-warning btn-xs' style="font-size: 14px" href="service/edit/${item.id}"> 
-									<span class="glyphicon glyphicon-edit"></span> <i class="bi bi-pencil-square"></i>	</a> 
-								</a>
-								</td>
+								<td alt="" width=250px>${item.descripsion}</td>
+								<td><img src="/forUser/imgs/Service/${item.image}" alt=""
+									width=150px /></td>
+								<td><a class='btn btn-warning btn-xs'
+									style="font-size: 14px" href="service/edit/${item.id}"> <span
+										class="glyphicon glyphicon-edit"></span> <i
+										class="bi bi-pencil-square"></i>
+								</a> </a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 				<hr />
 				<div class="text-center">
-					<a href="/admin/service?p=0" class="btn btn-primary">First</a> <a
+					<a href="/admin/service?p=0" class="btn btn-primary 10">First</a> <a
 						href="/admin/service?p=${page.number-1}" class="btn btn-primary">Previous</a>
 					<a href="/admin/service?p=${page.number+1}" class="btn btn-primary">Next</a>
 					<a href="/admin/service?p=${page.totalPages-1}"
@@ -63,7 +63,8 @@
 
 	<!-- footer -->
 
-	<footer class="footer text-center"> &copy; PS 19944 - Nguyễn Quốc Huy  </footer>
+	<footer class="footer text-center"> &copy; PS 19944 - Nguyễn
+		Quốc Huy </footer>
 
 	<!-- End footer -->
 

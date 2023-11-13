@@ -25,8 +25,7 @@
 								<div class="col-6">
 									<div class="form-group">
 										<form:input type="text" class="form-control" id="id" path="id"
-											aria-describedby="usHid"
-											placeholder="Service ID" />
+											aria-describedby="usHid" placeholder="Service ID" />
 										<small id="usHid" class="form-text text-muted">Service
 											ID is invalid</small>
 									</div>
@@ -39,15 +38,13 @@
 									</div>
 									<div class="form-group">
 										<form:input type="price" class="form-control" id="price"
-											path="price" aria-describedby="priceHid"
-											placeholder="Price" />
+											path="price" aria-describedby="priceHid" placeholder="Price" />
 										<small id="priceHid" class="form-text text-muted">Service
 											Price is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="time" class="form-control" id="time"
-											path="time" aria-describedby="timeHid"
-											placeholder="Time" />
+										<form:input type="times" class="form-control" id="time"
+											path="time" aria-describedby="timeHid" placeholder="Time" />
 										<small id="timeHid" class="form-text text-muted">Service
 											Time is invalid</small>
 									</div>
@@ -59,9 +56,9 @@
 											Status is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:textarea type="descripsion" class="form-control" id="descripsion"
-											path="descripsion" aria-describedby="descripsionHid"
-											placeholder="descripsion" />
+										<form:textarea type="descripsion" class="form-control"
+											id="descripsion" path="descripsion"
+											aria-describedby="descripsionHid" placeholder="descripsion" />
 										<small id="descripsionHid" class="form-text text-muted">Service
 											Descripsion is invalid</small>
 									</div>
@@ -71,26 +68,89 @@
 										<small id="imageHid" class="form-text text-muted">Image
 											is invalid</small>
 									</div>
-									
 								</div>
 							</div>
 
-
-
-
-
-
-
 						</div>
 						<div class="card-footer text-muted">
-							<button type="submit" class="btn btn-primary "
-								formaction="/admin/service/create">Insert</button>
-							<button type="submit" class="btn btn-warning"
-								formaction="/admin/service/update">Update</button>
-							<button type="submit" class="btn btn-danger"
-								formaction="/admin/service/delete/${items.id}">Delete</button>
+							<button type="button" class="btn btn-primary "
+								data-toggle="modal" data-target="#insertModal">Insert</button>
+							<button type="button" class="btn btn-warning" data-toggle="modal"
+								data-target="#updateModal">Update</button>
+							<button type="button" class="btn btn-danger" data-toggle="modal"
+								data-target="#deleteModal">Delete</button>
 							<button type="submit" class="btn btn-success"
 								formaction="/admin/serviceControl">Reset</button>
+						</div>
+						<div class="modal fade" id="insertModal" tabindex="-1"
+							role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Service
+											insert title</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">Are you sure about that ???</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">No</button>
+										<button type="submit" formaction="/admin/service/insert"
+											class="btn btn-primary">Yes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="updateModal" tabindex="-1"
+							role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Service
+											update title</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">Are you sure about that ???</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">No</button>
+										<button type="submit" formaction="/admin/service/update"
+											class="btn btn-primary">Yes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="deleteModal" tabindex="-1"
+							role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Service
+											delete title</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">Are you sure about that ???</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">No</button>
+										<button type="submit"
+											formaction="/admin/service/delete/${items.id}"
+											class="btn btn-primary">Yes</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</form:form>
@@ -108,11 +168,11 @@
 				</div>
 			</form>
 		</div> -->
-
-
 		<!-- footer -->
 
-		<footer class="footer text-center"> &copy; PS 19944 - Nguyễn Quốc Huy  </footer>
+
+		<footer class="footer text-center"> &copy; PS 19944 - Nguyễn
+			Quốc Huy </footer>
 
 		<!-- End footer -->
 

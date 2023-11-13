@@ -29,7 +29,7 @@ public class services {
 
 	@RequestMapping("services")
 	public String services(Model model,	@RequestParam("p") Optional<Integer> p) {
-		Pageable pageable = PageRequest.of(p.orElse(0), 6);
+		Pageable pageable = PageRequest.of(p.orElse(0), 4);
 		Page<Service> page = serDAO.findAll(pageable);
 		int currentPage =1;
 		int totalItems = page.getNumberOfElements();
