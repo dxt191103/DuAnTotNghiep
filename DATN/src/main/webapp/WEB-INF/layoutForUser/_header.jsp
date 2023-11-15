@@ -24,7 +24,7 @@
             <!-- Navigation -->
             <nav class="navbar navbar-expand-xl navbar-dark">
                 <!-- logo site -->
-                <a class="navbar-brand main-logo" href="index.html" rel="home" title="Natuspa">
+                <a class="navbar-brand main-logo" href="index" rel="home" title="Natuspa">
                     <img src="/forUser/imgs/logo_white.png" alt="Natuspa Logo" width="193" height="76">
                 </a>
                 <!--  main nav -->

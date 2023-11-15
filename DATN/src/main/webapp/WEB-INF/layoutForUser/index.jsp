@@ -111,10 +111,6 @@
                     Extra
                     Off Local & Getaways, or 10% Extra Off Goods.
                 </p>
-                <form action="#">
-                    <input type="text" placeholder="Your E-mail">
-                    <button class="btn book-now-btn">Subcriber</button>
-                </form>
             </div>
         </div>
     </div>
