@@ -99,7 +99,7 @@
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">No</button>
-										<button type="submit" formaction="/admin/service/insert"
+										<button type="submit" formaction="/admin/service/create"
 											class="btn btn-primary">Yes</button>
 									</div>
 								</div>

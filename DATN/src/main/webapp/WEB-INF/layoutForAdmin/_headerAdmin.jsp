@@ -13,13 +13,13 @@
                         <b class="logo-icon p-l-10">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="/forAdmin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                            <img src="/forAdmin/assets/images/AdminIcon.png" alt="homepage" width=50px class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                          <!-- Logo text -->
                         <span class="logo-text">
                              <!-- dark Logo text -->
-                             <img src="/forAdmin/assets/images/logo-text.png" alt="homepage" class="light-logo" />
+                             <h2></h2><img src="/forAdmin/assets/images/Logotext.png" alt="homepage" width=150px class="light-logo" />
                         </span>
                     </a>
                     <!-- End Logo -->
@@ -42,7 +42,7 @@
                     <ul class="navbar-nav float-right">
                         <!-- User profile and search -->                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="/home/index"> LAPSHOP <img src="/forAdmin/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="/home/index">Home <img src="/forAdmin/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
                             
                         </li>
                         <!-- User profile and search -->
