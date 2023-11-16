@@ -24,6 +24,7 @@ public class Staff implements Serializable{
 	Date birthday;
 	String address;
 	String phone;
+	String mail;
 	String image;
 	int experience;
 	@ManyToOne

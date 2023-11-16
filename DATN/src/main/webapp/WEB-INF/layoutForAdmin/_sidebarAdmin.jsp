@@ -15,15 +15,7 @@
                                 <li class="sidebar-item"><a href="shift" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Shift Controller </span></a></li>
                                 <li class="sidebar-item"><a href="staff" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Staff Controller </span></a></li>
                                 <li class="sidebar-item"><a href="service" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Service Controller </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu"> Statistic </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="/admin/bestsaler" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Best Saler </span></a></li>
-                                <li class="sidebar-item"><a href="/admin/topcustomer" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Top Customer </span></a></li>
-                                <li class="sidebar-item"><a href="/admin/reportcategory" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Category Statistic </span></a></li>
-                                <li class="sidebar-item"><a href="/admin/reportOrderByDate" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Report Order By Date</span></a></li>
-                                <li class="sidebar-item"><a href="/admin/revenuereport" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Revenue </span></a></li>
+                                <li class="sidebar-item"><a href="bill" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Bill Controller </span></a></li>
                             </ul>
                         </li>
                     </ul>
