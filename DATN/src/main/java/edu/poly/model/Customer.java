@@ -25,6 +25,6 @@ public class Customer implements Serializable{
 	
 	@OneToMany
 	(mappedBy = "account")
-	List<BillDetail> BillDetail;
+	List<Bill> Bill;
 		
 }

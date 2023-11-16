@@ -85,7 +85,8 @@
 
 		<!-- footer -->
 
-		<footer class="footer text-center"> &copy; PS 19944 - Nguyễn Quốc Huy  </footer>
+		<footer class="footer text-center"> &copy; PS11609 -
+			NguyenHuyHoang </footer>
 
 		<!-- End footer -->
 

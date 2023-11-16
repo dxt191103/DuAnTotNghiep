@@ -20,9 +20,6 @@ public class BillDetail implements Serializable{
 	
 	@Id
 	String id;
-	@ManyToOne
-	@JoinColumn(name = "Customer")
-	Customer account;
 
 	@ManyToOne
 	@JoinColumn(name = "Staff_id")

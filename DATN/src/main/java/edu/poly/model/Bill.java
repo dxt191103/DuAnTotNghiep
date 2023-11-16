@@ -8,6 +8,8 @@ import java.sql.Time;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,19 +21,21 @@ public class Bill implements Serializable{
 	
 	@Id
 	String id;
+	@ManyToOne
+	@JoinColumn(name = "Customer")
+	Customer account;
 	Date time;
 	Double price;
 	String sale;
 	Double total;
-	Boolean status;
 	
 	
-	@Column(nullable = false, columnDefinition = "bit default 0")
-	boolean activated;
+//	@Column(nullable = false, columnDefinition = "bit default 0")
+//	boolean activated;
 	
 	@OneToMany
 	(mappedBy = "bill")
-	List<BillDetail> BillDetail;
+	List<BillDetail> billDetail;
 //	boolean admin;
 //	@OneToMany(mappedBy = "account")
 //	List<Order> orders;
