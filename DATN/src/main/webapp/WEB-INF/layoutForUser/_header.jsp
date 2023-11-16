@@ -62,6 +62,8 @@
                             <a class="nav-link" href="#">Account</a>
                             <ul class="sub-menu">
                                 <li><a href="login">Login</a></li>
+                                <li><a href="register">register</a></li>
+                                <li><a href="change-password">Change password</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -59,8 +59,7 @@ public class LoginController {
 					cookieService.remove("username");
 					cookieService.remove("password");
 				}
-				model.addAttribute("message", "Login Successfully");
-				return "home/login";
+				return "home/index";
 			}
 		} catch (Exception e) {
 			model.addAttribute("message", "Account is invalid!");

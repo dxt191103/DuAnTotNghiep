@@ -6,6 +6,7 @@ import javax.mail.MessagingException;
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.poly.dao.CustomerDAO;
 import edu.poly.model.Customer;
 import edu.poly.service.impl.MailerServiceImpl;
+//import edu.poly.repository.AccountDAO;
+//import edu.poly.service.impl.MailerServiceImpl;
 import edu.poly.utils.ParamService;
 import edu.poly.utils.SessionService;
 import net.bytebuddy.utility.RandomString;
@@ -41,27 +44,36 @@ public class ForgotPasswordController {
 	@PostMapping("forgot-password")
 	public String change(Model model) {
 		String email = paramService.getString("email", "");
-		String username = paramService.getString("username", "");
+		String username = paramService.getString("username", ""); 
 		String subject = "Send your Password!";
 		String body = "Your Password: ";
-		String password;
+		String password ;
 		String randomPassword = RandomString.make(6);
-		
 		try {
+			if (username.isEmpty() && email.isEmpty()) {
+				model.addAttribute("message", "No Empty!");
+			}else {
 			Customer user = dao.findById(username).get();
 				if(!user.getEmail().equals(email)) {
 					model.addAttribute("message", "Wrong Email!");
-				}else {
-					user.setPassword(randomPassword);
-					dao.save(user);
-					mailer.send(email, subject, body+randomPassword);
+				}else {			
+					try {
+						user.setPassword(randomPassword);
+						mailer.send(email, subject, body+randomPassword);
+					} catch (MessagingException e) {
+						// TODO Auto-generated catch block
+						model.addAttribute("message", "Send Error!");
+					}
 					model.addAttribute("message", "Please check your Email!");
+					dao.save(user);
 				}
-		} catch (Exception e) {
+			}
+		} catch (DataAccessException e) {
 			model.addAttribute("message", "Account invalid!");
 		}
 		return "home/forgot-password";
 	}
+
 //	
 //	@PostMapping("forgot-password")
 //	public String forgotpass(Model model) {
@@ -89,3 +101,4 @@ public class ForgotPasswordController {
 //		return "home/forgot-password";
 //	}
 }
+ 
