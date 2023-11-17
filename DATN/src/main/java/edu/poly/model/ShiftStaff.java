@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 @Data
@@ -19,12 +20,15 @@ import lombok.Data;
 public class ShiftStaff implements Serializable{
 	
 	@Id
+	@Size(min=1)
 	String id;
 	@ManyToOne
 	@JoinColumn(name = "Staff_id")
+	@Size(min=1)
 	Staff staff;
 	@ManyToOne
 	@JoinColumn(name = "Shift_id")
+	@Size(min=1)
 	Shift shift;
 	
 	

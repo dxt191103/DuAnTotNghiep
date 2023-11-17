@@ -6,12 +6,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,9 +61,24 @@ public class ShiftController {
 	}
 	
 	@RequestMapping("/shift/create")
-	public String create(Shift item) {
-		dao.save(item);
-		return "redirect:/admin/shiftControl";
+	public String create(@Valid Shift item, BindingResult br, Model model) {
+		if (br.hasErrors()) {
+			Map<String, String> errors = new HashMap<>();
+
+			br.getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
+
+			String errorMsg = "";
+
+			for (String key : errors.keySet()) {
+				errorMsg +="<li>" + errors.get(key) + "</li>";
+//				errorMsg +="Lỗi ở: " + key + ", lí do: " + errors.get(key) + "\n";
+			}
+			model.addAttribute("message", errorMsg);
+		} else {
+			dao.save(item);
+			model.addAttribute("message", "Mọi thứ hợp lệ!");
+		}
+		return "forward:/admin/shiftControl";
 	}
 	
 	@RequestMapping("/shift/delete/{id}")
@@ -70,9 +88,24 @@ public class ShiftController {
 	}
 	
 	@RequestMapping("/shift/update")
-	public String update(Shift item) {
-		dao.save(item);
-		return "redirect:/admin/shift/edit/" + item.getId();
+	public String update(@Valid Shift item,BindingResult br, Model model) {
+		if (br.hasErrors()) {
+			Map<String, String> errors = new HashMap<>();
+
+			br.getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
+
+			String errorMsg = "";
+
+			for (String key : errors.keySet()) {
+				errorMsg +="<li>" + errors.get(key) + "</li>";
+//				errorMsg +="Lỗi ở: " + key + ", lí do: " + errors.get(key) + "\n";
+			}
+			model.addAttribute("message", errorMsg);
+		} else {
+			dao.save(item);
+			model.addAttribute("message", "Mọi thứ hợp lệ!");
+		}
+		return "forwark:/admin/shift/edit/" + item.getId();
 	}
 
 //	@ModelAttribute("availables")

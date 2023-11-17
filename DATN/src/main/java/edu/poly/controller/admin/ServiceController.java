@@ -68,13 +68,25 @@ public class ServiceController {
 	}
 
 	@RequestMapping("/service/create")
-	public String create(@Valid Service item) {
-//		if(br.hasErrors()) {
-//			model.addAttribute("message","Không hợp lệ");
-//		}
-		item.setImage(item.getImage());
-		dao.save(item);
-		return "redirect:/admin/serviceControl";
+	public String create(@Valid Service item, BindingResult br, Model model) {
+		if (br.hasErrors()) {
+			Map<String, String> errors = new HashMap<>();
+
+			br.getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
+
+			String errorMsg = "";
+
+			for (String key : errors.keySet()) {
+				errorMsg +="<li>" + errors.get(key) + "</li>";
+//				errorMsg +="Lỗi ở: " + key + ", lí do: " + errors.get(key) + "\n";
+			}
+			model.addAttribute("message", errorMsg);
+			return "forward:/home/register";
+		} else {
+			dao.save(item);
+			model.addAttribute("message", "Thêm mới thành công");
+		}
+		return "forward:/admin/serviceControl";
 	}
 
 	@RequestMapping("/service/delete/{id}")
@@ -86,8 +98,19 @@ public class ServiceController {
 	@RequestMapping("/service/update")
 	public String update(@Valid Service item,  BindingResult br ,Model model) {
 		if (br.hasErrors()) {
-			model.addAttribute("message", "Không hợp lệ");
+			Map<String, String> errors = new HashMap<>();
+
+			br.getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
+
+			String errorMsg = "";
+
+			for (String key : errors.keySet()) {
+				errorMsg +="<li>" + errors.get(key) + "</li>";
+//				errorMsg +="Lỗi ở: " + key + ", lí do: " + errors.get(key) + "\n";
+			}
+			model.addAttribute("message", errorMsg);
 		} else {
+			model.addAttribute("message", "Cập nhật thành công");
 			dao.save(item);
 		}
 		

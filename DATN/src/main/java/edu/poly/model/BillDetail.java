@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 import lombok.ToString;
@@ -21,16 +23,21 @@ import lombok.ToString;
 @Table(name = "Bill_detail")
 public class BillDetail implements Serializable{
 	@Id
+	@Size(min=1)
 	String id;
 	@ManyToOne
 	@JoinColumn(name = "Staff_id")
+	@Size(min=1)
 	Staff staff;
 	@ManyToOne
 	@JoinColumn(name = "Bill_id")
+	@Size(min=1)
 	Bill bill;
 	@ManyToOne
 	@JoinColumn(name = "Service_id")
+	@Size(min=1)
 	Service service;
+	@Min(1)
 	Double price;
 
 	

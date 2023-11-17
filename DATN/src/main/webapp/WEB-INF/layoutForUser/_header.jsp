@@ -36,34 +36,34 @@
                     <ul class="navbar-nav menu" id="mainNav">
                         <li class="nav-item menu-item menu-item-current menu-item-has-child">
                             <a class="nav-link"
-                            href="index">Home</a>
+                            href="/home/index">Home</a>
                             
                         </li>
                         <li class="nav-item menu-item">
-                            <a class="nav-link" href="services">Services</a>
+                            <a class="nav-link" href="/home/services">Services</a>
                         </li>
                         <li class="nav-item menu-item">
-                            <a class="nav-link" href="contactus">Contact</a>
+                            <a class="nav-link" href="/home/contactus">Contact</a>
                         </li>
                         <li class="nav-item menu-item menu-item-has-child">
                             <a class="nav-link" href="#">News</a>
                             <ul class="sub-menu">
-                                <li><a href="pageblog">Blog Grid</a></li>
-                                <li><a href="pageblogdetails">Blog Details</a></li>
+                                <li><a href="/home/pageblog">Blog Grid</a></li>
+                                <li><a href="/home/pageblogdetails">Blog Details</a></li>
                             </ul>
                         </li>
                         <li class="nav-item menu-item">
-                            <a class="nav-link" href="pagepricing">Pricing</a>
+                            <a class="nav-link" href="/home/pagepricing">Pricing</a>
                         </li>
                         <li class="nav-item menu-item">
-                            <a class="nav-link" href="aboutus">About Us</a>
+                            <a class="nav-link" href="/home/aboutus">About Us</a>
                         </li>
                         <li class="nav-item menu-item menu-item-has-child">
                             <a class="nav-link" href="#">Account</a>
                             <ul class="sub-menu">
-                                <li><a href="login">Login</a></li>
-                                <li><a href="register">register</a></li>
-                                <li><a href="change-password">Change password</a></li>
+                                <li><a href="/home/login">Login</a></li>
+                                <li><a href="/home/register">Register</a></li>
+                                <li><a href="/home/change-password">Change password</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -12,6 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
 
 import lombok.Data;
 @Data
@@ -20,13 +24,19 @@ import lombok.Data;
 public class Bill implements Serializable{
 	
 	@Id
+	@Size(min=1,max=10, message = "Id phải từ 1 đến 10 ký tự")
 	String id;
 	@ManyToOne
 	@JoinColumn(name = "Customer")
+	@Size(min=1)
 	Customer account;
-	Date time;
+	@Size(min=1)
+	String time;
+	@Min(1)
 	Double price;
+	@Size(min=1)
 	String sale;
+	@Min(1)
 	Double total;
 	
 	

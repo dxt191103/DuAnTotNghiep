@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -15,7 +16,9 @@ import lombok.Data;
 @Table(name = "Role")
 public class Role implements Serializable{
 	@Id
+	@Size(min=1)
 	String id;
+	@Size(min=1)
 	String name;
 	
 	@OneToMany

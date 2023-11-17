@@ -43,20 +43,20 @@
 											Price is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="times" class="form-control" id="time"
+										<form:input type="text" class="form-control" id="time"
 											path="time" aria-describedby="timeHid" placeholder="Time" />
 										<small id="timeHid" class="form-text text-muted">Service
 											Time is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="status" class="form-control" id="status"
+										<form:input type="text" class="form-control" id="status"
 											path="status" aria-describedby="statusHid"
 											placeholder="Status" />
 										<small id="statusHid" class="form-text text-muted">Service
 											Status is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:textarea type="descripsion" class="form-control"
+										<form:textarea type="text" class="form-control"
 											id="descripsion" path="descripsion"
 											aria-describedby="descripsionHid" placeholder="descripsion" />
 										<small id="descripsionHid" class="form-text text-muted">Service

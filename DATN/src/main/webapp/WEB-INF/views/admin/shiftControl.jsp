@@ -18,7 +18,7 @@
 								Shift Control <a href="/admin/shift"
 									class="btn btn-success float-right">SHift List</a>
 							</h3>
-							<div class="bg-success text-light px-3">${message }</div>
+							<div class="bg-success text-light px-3">${message}</div>
 						</div>
 						<div class="card-body">
 							<div class="col row">
