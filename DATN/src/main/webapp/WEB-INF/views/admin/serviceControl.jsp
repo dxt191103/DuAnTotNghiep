@@ -18,7 +18,7 @@
 								Service Control <a href="/admin/service"
 									class="btn btn-success float-right">Service List</a>
 							</h3>
-							<div class="bg-success text-light px-3">${message }</div>
+							<div class="bg-success text-light px-3">${message}</div>
 						</div>
 						<div class="card-body">
 							<div class="col row">
@@ -30,14 +30,14 @@
 											ID is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="name" class="form-control" id="name"
+										<form:input type="text" class="form-control" id="name"
 											path="name" aria-describedby="nameHid"
-											placeholder="Service Name" />
+											placeholder="Service Name"  />
 										<small id="nameHid" class="form-text text-muted">Service
 											Name is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="price" class="form-control" id="price"
+										<form:input type="number" class="form-control" id="price"
 											path="price" aria-describedby="priceHid" placeholder="Price" />
 										<small id="priceHid" class="form-text text-muted">Service
 											Price is invalid</small>
@@ -72,6 +72,7 @@
 							</div>
 
 						</div>
+						
 						<div class="card-footer text-muted">
 							<button type="button" class="btn btn-primary "
 								data-toggle="modal" data-target="#insertModal">Insert</button>
