@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
@@ -17,8 +18,11 @@ import javax.persistence.Table;
 @Table(name = "Shift")
 public class Shift {
 	@Id
+	@Size(min=1)
 	String Id;
+	@Size(min=1)
 	String begintime;
+	@Size(min=1)
 	String endtime;
 	
 	@OneToMany

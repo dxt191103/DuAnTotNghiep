@@ -11,7 +11,7 @@
 			<div class="col-md-10 offset-md-1">
 				<h3 class="alert alert-info">
 					Staff List<a href="staffControl"
-									class="btn btn-success float-right">Add new staff</a>
+									class="btn btn-success float-right">Add new Staff</a>
 				</h3>
 				<table class="table text-center">
 					<thead>
@@ -22,6 +22,7 @@
 							<th style="font-weight: bolder; font-size: 18px">Address</th>
 							<th style="font-weight: bolder; font-size: 18px">Phone</th>
 							<th style="font-weight: bolder; font-size: 18px">Image</th>
+							<th style="font-weight: bolder; font-size: 18px">Email</th>
 							<th style="font-weight: bolder; font-size: 18px">Experience</th>
 							<th style="font-weight: bolder; font-size: 18px">Role</th>
 							<th style="font-weight: bolder; font-size: 18px">Status</th>
@@ -35,10 +36,11 @@
 								<td>${item.birthday}</td>
 								<td>${item.address}</td>
 								<td>${item.phone}</td>
-								<td><img src="/forUser/img/products/${item.image }" alt=""
+								<td><img src="/forUser/img/products/${item.image}" alt=""
 									width=50% /></td>
+								<td>${item.mail}</td>
 								<td>${item.experience}</td>
-								<td>${item.role.id}</td>
+								<td>${item.role.name}</td>
 								<td>${item.status}</td>
 								<td> 
 									<a class='btn btn-warning btn-xs' style="font-size: 14px" href="staff/edit/${item.id}"> 

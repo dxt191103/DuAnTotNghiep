@@ -25,7 +25,7 @@
 			<div class="col-lg-6 offset-lg-3">
 				<div class="register-form">
 					<h2>Register</h2>
-					<h4>${message }</h4>
+					<p class="text-danger">${message}</p>
 					<form:form method="get" action="/home/register" modelAttribute="item">
 						<div class="group-input">
 							<label for="username">Username *:</label> 
@@ -45,7 +45,7 @@
 						</div>
 						<div class="group-input">
 							<label for="con-pass">Email *:</label> 
-							<form:input type="email" id="email" path="email"/>
+							<form:input type="text" id="email" path="email"/>
 						</div>
 						
 							</div>

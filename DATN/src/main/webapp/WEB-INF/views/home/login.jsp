@@ -12,7 +12,7 @@
                         <h2>Login</h2>
                         
                         <form action="login" method="post">
-                        <h5 class="text-danger">${message}</h5>
+                        <h4 class="text-danger">${message}</h4>
                             <div class="group-input">
                                 <label for="username">Username *</label>
                                 <input type="text" id="username" name="username">

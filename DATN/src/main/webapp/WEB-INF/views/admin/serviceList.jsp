@@ -11,8 +11,8 @@
 			<div class="col-md-10 offset-md-1">
 				<h3 class="alert alert-info">
 					Service List
-					<!--  <a href="/admin/staff/serviceControl"
-									class="btn btn-success float-right">Add new staff</a>-->
+					<a href="/admin/serviceControl"
+									class="btn btn-success float-right">Add new Service</a>
 				</h3>
 				<table class="table text-center">
 					<thead>
