@@ -34,7 +34,7 @@
 								<td>${item.time}</td>
 								<td>${item.price}</td>
 								<td>${item.sale}</td>
-								<td><a href="/admin/billDetail?id=${item.id }"
+								<td><a href="/admin/billDetail?id=${item.id}"
 									style="font-size: 14px">Order Detail</a></td>
 								<td>${item.total}</td>
 							</tr>

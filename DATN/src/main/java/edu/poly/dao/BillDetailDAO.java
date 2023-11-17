@@ -12,10 +12,11 @@ import edu.poly.model.BillDetail;
 
 
 public interface BillDetailDAO extends JpaRepository<BillDetail, String> {
-
+	@Query("SELECT o FROM BillDetail o WHERE o.bill.id = ?1")
+	Page<BillDetail> findByBill(String id, Pageable pageable);
+	
 	@Query("SELECT o FROM BillDetail o WHERE o.bill.id = ?1")
 	List<BillDetail> findByBillID(String billid);
 	
-	@Query("SELECT o FROM BillDetail o WHERE o.bill.id = ?1")
-	Page<BillDetail> findByBill(String id, Pageable pageable);
+	
 }

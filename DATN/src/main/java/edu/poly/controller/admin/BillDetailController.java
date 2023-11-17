@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,6 +17,7 @@ import edu.poly.dao.BillDAO;
 import edu.poly.dao.BillDetailDAO;
 import edu.poly.model.Bill;
 import edu.poly.model.BillDetail;
+import edu.poly.model.Customer;
 import edu.poly.utils.CookieService;
 import edu.poly.utils.ParamService;
 import edu.poly.utils.SessionService;
@@ -40,8 +42,8 @@ public class BillDetailController {
 	@RequestMapping("billDetail")
 	public String locBrand(Model model, @RequestParam("id") String id, @RequestParam("p") Optional<Integer> p) {
 		Bill bill = new Bill();
-		List<Bill> Bills = billDAO.findAll();
-		for (Bill bl : Bills) {
+		List<Bill> bills = billDAO.findAll();
+		for (Bill bl : bills) {
 			if (bl.getId() == id) {
 				bill = bl;
 				break;
@@ -60,5 +62,6 @@ public class BillDetailController {
 		model.addAttribute("page", page);
 		return "admin/billDetailList";
 	}
-
+	
+	
 }
