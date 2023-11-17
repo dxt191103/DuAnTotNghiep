@@ -10,6 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 @Data
@@ -19,7 +22,10 @@ public class Service implements Serializable{
 	
 	@Id
 	String id;
+	//@Size(min = 5,max =10)
+	@NotEmpty
 	String name;
+	@Min(100)
 	Double price;
 	String time;
 	String descripsion;
