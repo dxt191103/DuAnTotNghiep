@@ -50,7 +50,7 @@ public class BillController {
 //	}
 	
 	@RequestMapping("/bill/edit/{id}")
-	public String edit(Model model, @PathVariable("id") Integer id) {
+	public String edit(Model model, @PathVariable("id") String id) {
 		Bill item = dao.findById(id).get();
 		model.addAttribute("item", item);
 		List<Bill> items = dao.findAll();

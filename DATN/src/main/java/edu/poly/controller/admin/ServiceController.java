@@ -59,7 +59,7 @@ public class ServiceController {
 	}
 
 	@RequestMapping("/service/edit/{id}")
-	public String edit(Model model, @PathVariable("id") Integer id) {
+	public String edit(Model model, @PathVariable("id") String id) {
 		Service item = dao.findById(id).get();
 		model.addAttribute("item", item);
 //		List<Service> items = dao.findAll();
@@ -90,7 +90,7 @@ public class ServiceController {
 	}
 
 	@RequestMapping("/service/delete/{id}")
-	public String create(@PathVariable("id") Integer id) {
+	public String create(@PathVariable("id") String id) {
 		dao.deleteById(id);
 		return "redirect:/admin/service";
 	}

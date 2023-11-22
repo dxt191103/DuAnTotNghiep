@@ -7,8 +7,6 @@ import java.sql.Time;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,9 +24,8 @@ import lombok.Data;
 public class Bill implements Serializable{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Size(min=1,max=10, message = "Id phải từ 1 đến 10 ký tự")
-	Integer id;
+	String id;
 	@ManyToOne
 	@JoinColumn(name = "Customer")
 	@Size(min=1)

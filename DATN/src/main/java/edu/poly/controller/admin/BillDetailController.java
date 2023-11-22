@@ -40,7 +40,7 @@ public class BillDetailController {
 	
 
 	@RequestMapping("billDetail")
-	public String locBrand(Model model, @RequestParam("id") Integer id, @RequestParam("p") Optional<Integer> p) {
+	public String locBrand(Model model, @RequestParam("id") String id, @RequestParam("p") Optional<Integer> p) {
 		Bill bill = new Bill();
 		List<Bill> bills = billDAO.findAll();
 		for (Bill bl : bills) {

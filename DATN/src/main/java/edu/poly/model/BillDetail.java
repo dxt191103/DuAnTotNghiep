@@ -23,9 +23,8 @@ import lombok.ToString;
 @Table(name = "Bill_detail")
 public class BillDetail implements Serializable{
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Size(min=1)
-	Integer id;
+	String id;
 	@ManyToOne
 	@JoinColumn(name = "Staff_id")
 	@Size(min=1)
