@@ -13,7 +13,7 @@
 					Staff List<a href="staffControl"
 									class="btn btn-success float-right">Add new Staff</a>
 				</h3>
-				<table class="table text-center">
+				<table  class="table text-center">
 					<thead>
 						<tr>
 							<th style="font-weight: bolder; font-size: 18px">ID</th>
