@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
@@ -43,7 +44,6 @@ public class Staff implements Serializable{
 	int experience;
 	@ManyToOne
 	@JoinColumn(name="Role")
-	@Size(min=1)
 	Role role;
 	
 	
