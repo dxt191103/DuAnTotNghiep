@@ -7,6 +7,8 @@ import java.sql.Time;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -21,8 +23,9 @@ import lombok.Data;
 public class Service implements Serializable{
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Size(min=2, max=10, message = "Id phải có từ 2 đến 10 ký tự")
-	String id;
+	Integer id;
 	//@Size(min = 5,max =10)
 	@Size(min=2, max=50, message = "Tên phải có từ 2 đến 50 ký tự")
 	String name;

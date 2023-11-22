@@ -10,5 +10,5 @@ import org.springframework.data.jpa.repository.Query;
 
 import edu.poly.model.Bill;
 
-public interface BillDAO extends JpaRepository<Bill, String> {
+public interface BillDAO extends JpaRepository<Bill, Integer> {
 }

@@ -61,7 +61,7 @@ public class StaffController {
 	}
 	
 	@RequestMapping("/staff/edit/{id}")
-	public String edit(Model model, @PathVariable("id") String id) {
+	public String edit(Model model, @PathVariable("id") Integer id) {
 		Staff item = dao.findById(id).get();
 		model.addAttribute("item", item);
 		List<Role> list = Rdao.findAll();
