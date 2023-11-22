@@ -9,6 +9,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Data
@@ -22,6 +24,6 @@ public class Role implements Serializable{
 	String name;
 	
 	@OneToMany
-	(mappedBy = "role")
+	(mappedBy = "role") @JsonIgnore
 	List<Staff> Staff;
 }

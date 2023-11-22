@@ -25,9 +25,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.fasterxml.jackson.core.sym.Name;
+
 import edu.poly.dao.RoleDAO;
+import edu.poly.dao.ShiftDAO;
+import edu.poly.dao.ShiftStaffDAO;
 import edu.poly.dao.StaffDAO;
 import edu.poly.model.Role;
+import edu.poly.model.Shift;
 import edu.poly.model.Staff;
 @RequestMapping("admin")
 @Controller
@@ -36,6 +42,8 @@ public class StaffController {
 	StaffDAO dao;
 	@Autowired
 	RoleDAO Rdao;
+	@Autowired
+	ShiftDAO Sdao;
 	
 	@RequestMapping("staff")
 	public String paginate(Model model,	@RequestParam("p") Optional<Integer> p) {
@@ -50,13 +58,15 @@ public class StaffController {
 		model.addAttribute("page", page);
 		return "admin/staffList";
 	}
-
+	
 	@RequestMapping("/staffControl")
 	public String control(Model model) {
 		Staff item = new Staff();
 		model.addAttribute("item", item);
 		List<Role> list = Rdao.findAll();
 		model.addAttribute("y", list);
+		List<Shift> lists = Sdao.findAll();
+		model.addAttribute("s", lists);
 		return "admin/staffControl";
 	}
 	
@@ -66,9 +76,10 @@ public class StaffController {
 		model.addAttribute("item", item);
 		List<Role> list = Rdao.findAll();
 		model.addAttribute("y", list);
+		List<Shift> lists = Sdao.findAll();
+		model.addAttribute("s", lists);
 		return "admin/staffControl";
 	}
-	
 	@RequestMapping("/staff/create")
 	public String create(@Valid Staff item, Model model, BindingResult br) {	
 		if (br.hasErrors()) {
@@ -116,6 +127,9 @@ public class StaffController {
 			model.addAttribute("message", errorMsg);
 			return "forward:/home/register";
 		} else {
+			Role roleId = item.getRole();
+			System.err.println(roleId.getId());
+
 			dao.save(item);
 			model.addAttribute("message", "Thêm mới thành công");
 		}

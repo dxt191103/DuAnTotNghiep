@@ -25,8 +25,7 @@
 								<div class="col-6">
 									<div class="form-group">
 										<form:input type="text" class="form-control" id="id" path="id"
-											 aria-describedby="usHid"
-											placeholder="Product ID" />
+											aria-describedby="usHid" placeholder="Product ID" />
 										<small id="usHid" class="form-text text-muted">Staff
 											ID is invalid</small>
 									</div>
@@ -37,16 +36,18 @@
 										<small id="nameHid" class="form-text text-muted">Staff
 											Name is invalid</small>
 									</div>
-									
+
 									<div class="form-group">
 										<form:input type="date" class="form-control" id="birthday"
-											 path="birthday" 
-											aria-describedby="birthdayHid" placeholder="birthday" />
-										<small id="createDateHid" class="form-text text-muted">Birthday is invalid</small>
+											path="birthday" aria-describedby="birthdayHid"
+											placeholder="birthday" />
+										<small id="createDateHid" class="form-text text-muted">Birthday
+											is invalid</small>
 									</div>
 									<div class="form-group">
 										<form:input type="text" class="form-control" id="address"
-											path="Address" aria-describedby="addHid" placeholder="Address" />
+											path="Address" aria-describedby="addHid"
+											placeholder="Address" />
 										<small id="addHid" class="form-text text-muted">Address
 											is invalid</small>
 									</div>
@@ -76,30 +77,28 @@
 											ID is invalid</small>
 									</div>-->
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="experience" path="experience"
-											 aria-describedby="usHid"
+										<form:input type="text" class="form-control" id="experience"
+											path="experience" aria-describedby="usHid"
 											placeholder="experience ID" />
 										<small id="usHid" class="form-text text-muted">Experience
 											is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="role" path="role.name"
-											disabled="false" aria-describedby="usHid"
-											placeholder="role ID" />
-											<form:select path="">
-													<form:option value="NONE"> --SELECT--</form:option>
-													<c:forEach var="i" items="${y}">
-														<form:option value="${i.name}"></form:option>
-													</c:forEach>
-											</form:select>
+										<form:select class="form-control" path="role.id"
+											aria-describedby="usHid">
+											<c:forEach var="role" items="${y}">
+												<form:option path="role" value="${role.id}">${role.name}</form:option>
+											</c:forEach>
+										</form:select>
 										<small id="usHid" class="form-text text-muted">Role
-											is invalid</small>
+											không hợp lệ</small>
 									</div>
+
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="status" path="status"
-											 aria-describedby="usHid"
+										<form:input type="text" class="form-control" id="status"
+											path="status" aria-describedby="usHid"
 											placeholder="status ID" />
-											
+
 										<small id="usHid" class="form-text text-muted">Status
 											ID is invalid</small>
 									</div>
@@ -143,7 +142,8 @@
 
 		<!-- footer -->
 
-		<footer class="footer text-center"> &copy; PS 19944 - Nguyễn Quốc Huy  </footer>
+		<footer class="footer text-center"> &copy; PS 19944 - Nguyễn
+			Quốc Huy </footer>
 
 		<!-- End footer -->
 
