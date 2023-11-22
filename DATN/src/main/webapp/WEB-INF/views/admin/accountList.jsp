@@ -31,23 +31,16 @@
 									<img src="/forAdmin/assets/images/users/${item.photo}" alt="" width="50%" class="img-fluid">
 								</td> --%>
 								<td>${item.username}</td>
-							
 								<td>${item.fullname}</td>
 								<td>${item.phone}</td>
 								<td>${item.email}</td>
-								
-								<td> 
-									<a class='btn btn-warning btn-xs' style="font-size: 14px" href="account/edit/${item.username}"> 
-									<span class="glyphicon glyphicon-edit"></span> <i class="bi bi-pencil-square"></i>	</a> 
-								</a>
-								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 				<hr />
 				<div class="text-center">
-					<a href="/admin/account?p=0" class="btn btn-primary"><i class="bi bi-skip-backward-fill"></i></a> 
+					<a href="/admin/account?p=0" class="btn btn-primary"><i class="bi bi-skip-backward-fill"></i></i></a> 
 					<a	href="/admin/account?p=${page.number-1}" class="btn btn-primary"><i class="bi bi-skip-start-fill"></i></a>
 					<a href="/admin/account?p=${page.number+1}" class="btn btn-primary"><i class="bi bi-skip-end-fill"></i></a>
 					<a href="/admin/account?p=${page.totalPages-1}"	class="btn btn-primary"><i class="bi bi-skip-forward-fill"></i></a>

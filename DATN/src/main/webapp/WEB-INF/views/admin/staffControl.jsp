@@ -20,7 +20,7 @@
 							</h3>
 							<div class="bg-success text-light px-3">${message}</div>
 						</div>
-						<div style="margin-left: -100px" class="card-body">
+						<div  class="card-body">
 							<div class="col row">
 								<div class="col-6">
 									<div class="form-group">
