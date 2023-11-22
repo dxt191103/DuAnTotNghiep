@@ -35,7 +35,7 @@
 								<td>${item.price}</td>
 								<td>${item.sale}</td>
 								<td><a href="/admin/billDetail?id=${item.id}"
-									style="font-size: 14px">Order Detail</a></td>
+									style="font-size: 14px">Detail</a></td>
 								<td>${item.total}</td>
 							</tr>
 						</c:forEach>
@@ -43,11 +43,10 @@
 				</table>
 				<hr />
 				<div class="text-center">
-					<a href="/admin/bill?p=0" class="btn btn-primary">First</a> <a
-						href="/admin/bill?p=${page.number-1}" class="btn btn-primary">Previous</a>
-					<a href="/admin/bill?p=${page.number+1}" class="btn btn-primary">Next</a>
-					<a href="/admin/bill?p=${page.totalPages-1}"
-						class="btn btn-primary">Last</a>
+					<a href="/admin/bill?p=0" class="btn btn-primary"><i class="bi bi-skip-backward-fill"></i></a>
+					<a href="/admin/bill?p=${page.number-1}" class="btn btn-primary"><i class="bi bi-skip-start-fill"></i></a>
+					<a href="/admin/bill?p=${page.number+1}" class="btn btn-primary"><i class="bi bi-skip-end-fill"></i></a>
+					<a href="/admin/bill?p=${page.totalPages-1}"class="btn btn-primary"><i class="bi bi-skip-forward-fill"></i></a>
 				</div>
 				<hr />
 			</div>

@@ -8,22 +8,6 @@
 	<div class="container-fluid">
 		<!-- Sales Cards  -->
 		<div class="row">
-			<div class="col-md-10 offset-md-1" var="bl" item="${bl}">
-				<div class="col row">
-					<div class="col-3  alert alert-info">
-						<h3 class="text-center">Bill</h3>
-						<h5>ID: ${bl.id}</h5>
-						<h5>Create Date: ${bl.time}</h5>
-					</div>
-				</div>
-					<div class="col-3 offset-6 alert alert-primary">
-						<h3 class="text-center">Customer</h3>
-						<h5>ID: ${account.id}</h5>
-						<h5>Name: ${bl.account.fullname}</h5>
-						<h5>Email: ${bl.account.email}</h5>
-					</div>
-				</div>
-
 				<table class="table text-center">
 					<thead>
 						<tr>
