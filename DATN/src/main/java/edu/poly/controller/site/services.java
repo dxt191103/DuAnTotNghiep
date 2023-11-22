@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import edu.poly.model.Service;
+import edu.poly.model.Services;
 import edu.poly.dao.CustomerDAO;
 import edu.poly.dao.ServiceDAO;
 import edu.poly.utils.CookieService;
@@ -30,7 +30,7 @@ public class services {
 	@RequestMapping("services")
 	public String services(Model model,	@RequestParam("p") Optional<Integer> p) {
 		Pageable pageable = PageRequest.of(p.orElse(0), 4);
-		Page<Service> page = serDAO.findAll(pageable);
+		Page<Services> page = serDAO.findAll(pageable);
 		int currentPage =1;
 		int totalItems = page.getNumberOfElements();
 		int totalPages = page.getTotalPages();

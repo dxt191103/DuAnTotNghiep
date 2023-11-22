@@ -29,7 +29,7 @@ public class Sale implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "Service_id")
 	@Size(min=1)
-	Service service;
+	Services services;
 	@Size(min=1)
 	boolean admin;
 	

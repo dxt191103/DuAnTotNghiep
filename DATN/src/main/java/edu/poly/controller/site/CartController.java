@@ -1,5 +1,6 @@
-	package edu.poly.controller.site;
+package edu.poly.controller.site;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
@@ -11,13 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.poly.dao.ServiceDAO;
 import edu.poly.model.CartItem;
 import edu.poly.model.Services;
 import edu.poly.service.ServiceforService;
 import edu.poly.service.ShoppingCartService;
-
-
-
 
 @Controller
 @RequestMapping("home")
@@ -26,12 +25,15 @@ public class CartController {
 	ServiceforService dao;
 	@Autowired
 	ShoppingCartService cartService;
-	
+	@Autowired
+	ServiceDAO Sdao;
+
 	@GetMapping("cart")
 	public String viewCart(Model model) {
 		model.addAttribute("CART_ITEMS", cartService.getAllItems());
 		return "home/cart";
 	}
+
 //	@PostMapping("/cart/add")
 //	public String addToCart(@RequestParam("id") String productId, HttpSession session) {
 //	    Service product = Service.findById(id);
@@ -43,9 +45,15 @@ public class CartController {
 //	    cart.addProduct(product);
 //	    return "redirect:/cart";
 //	}
-	@GetMapping("add/{id}")
+	@GetMapping("/add/{id}")
 	public String addCart(@PathVariable("id") String id) {
-		Services service = dao.findById(id);
+		List<Services> xx = Sdao.findAll();
+		Services service = new Services();
+		for (Services services : xx) {
+			if (services.getId().equals(id)) {
+				service = services;
+			}
+		}
 		if (service != null) {
 			CartItem item = new CartItem();
 			item.setServiceid(service.getId());
@@ -53,10 +61,10 @@ public class CartController {
 			item.setPrice(service.getPrice());
 			item.setQty(1);
 			cartService.add(item);
+			System.err.println(item.getName());
 		} else {
-
+			System.out.println("ngu");
 		}
-		return "redirect:/cart";
+		return "home/cart";
 	}
-	
 }
