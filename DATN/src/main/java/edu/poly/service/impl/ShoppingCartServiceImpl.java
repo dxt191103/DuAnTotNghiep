@@ -32,7 +32,7 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService{
 		}
 	}
 	@Override
-	public void remove(int id) {
+	public void remove(String id) {
 		maps.remove(id);
 	}
 	@Override
