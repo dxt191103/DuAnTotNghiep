@@ -11,7 +11,7 @@ public interface ShoppingCartService {
 	Collection<CartItem> getAllItems();
 	void clear();
 	CartItem update(String serID, int qty);
-	void remove(int id);
+	void remove(String id);
 	void add(CartItem item);
 	
 }
