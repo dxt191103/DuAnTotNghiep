@@ -248,7 +248,7 @@
                 </div>
             </div>
         </div>
-
+		<%--
         <!-- pricing plan -->
         <div class="pricing-plan container">
             <div class="spacer-clearfix" style="height: 80px;"></div>
@@ -341,7 +341,7 @@
             </div>
             <div class="spacer-clearfix" style="height: 60px;"></div>
         </div>
-
+		--%>
         <!-- collection section -->
         <div class="collection">
             <a href="/forUser/imgs/collection/gallery-1.jpg" class="collect-item">
@@ -540,7 +540,7 @@
             </div>
             <div class="spacer-clearfix" style="height: 90px;"></div>
         </div>
-
+		<%--
         <!-- latest blog -->
         <div class="latest-blog">
             <div class="spacer-clearfix" style="height: 80px;"></div>
@@ -635,8 +635,8 @@
                 </div>
             </div>
             <div class="spacer-clearfix" style="height: 90px;"></div>
-        </div>
-
+        </div> 
+		--%>
         <!-- maps section -->
         <div class="maps container-fluid">
             <div class="spacer-clearfix" style="height: 80px;"></div>
