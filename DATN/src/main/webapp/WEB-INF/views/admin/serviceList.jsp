@@ -48,12 +48,12 @@
 				</table>
 				<hr />
 				<div class="text-center">
-					<a href="/admin/service?p=0" class="btn btn-primary 10">First</a> <a
-						href="/admin/service?p=${page.number-1}" class="btn btn-primary">Previous</a>
-					<a href="/admin/service?p=${page.number+1}" class="btn btn-primary">Next</a>
-					<a href="/admin/service?p=${page.totalPages-1}"
-						class="btn btn-primary">Last</a>
+					<a href="/admin/service?p=0" class="btn btn-primary 10"><i class="bi bi-skip-backward-fill"></i></a>
+					<a href="/admin/service?p=${page.number-1}" class="btn btn-primary"><i class="bi bi-skip-start-fill"></i></a>
+					<a href="/admin/service?p=${page.number+1}" class="btn btn-primary"><i class="bi bi-skip-end-fill"></i></a>
+					<a href="/admin/service?p=${page.totalPages-1}" class="btn btn-primary"><i class="bi bi-skip-forward-fill"></i></a>
 				</div>
+				
 				<hr />
 			</div>
 		</div>

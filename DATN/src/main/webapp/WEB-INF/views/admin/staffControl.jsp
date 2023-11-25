@@ -8,7 +8,7 @@
 	<!-- Container fluid  -->
 	<div class="container-fluid">
 		<!-- Sales Cards  -->
-		<div class="row">
+		<div  class="row">
 			<div class="col-6 offset-3">
 				<form:form name="qryform" id="qryform" action="/admin/staff"
 					class="px-3" modelAttribute="item" method="post">
@@ -20,7 +20,7 @@
 							</h3>
 							<div class="bg-success text-light px-3">${message}</div>
 						</div>
-						<div class="card-body">
+						<div  class="card-body">
 							<div class="col row">
 								<div class="col-6">
 									<div class="form-group">

@@ -11,7 +11,7 @@
 			<div class="col-md-10 offset-md-1">
 				<h3 class="alert alert-info">
 					Staff List<a href="staffControl"
-									class="btn btn-success float-right">Add new Staff</a>
+						class="btn btn-success float-right">Add new Staff</a>
 				</h3>
 				<table class="table text-center">
 					<thead>
@@ -44,26 +44,24 @@
 								<td>${item.shift.id}</td>
 								<td>${item.role.name}</td>
 								<td>${item.status}</td>
-								<td> 
-									<a class='btn btn-warning btn-xs' style="font-size: 14px" href="staff/edit/${item.id}"> 
-									<span class="glyphicon glyphicon-edit"></span> <i class="bi bi-pencil-square"></i>	</a> 
-								</a>
-								<a href="staff/delete/${item.id}"
-									style="font-size: 14px" class="btn btn-danger btn-xs"> <span
+								<td><a class='btn btn-warning btn-xs'
+									style="font-size: 14px" href="staff/edit/${item.id}"> <span
+										class="glyphicon glyphicon-edit"></span> <i
+										class="bi bi-pencil-square"></i>
+								</a> </a> <a href="staff/delete/${item.id}" style="font-size: 14px"
+									class="btn btn-danger btn-xs"> <span
 										class="glyphicon glyphicon-remove"></span> Delete
-								</a>
-								</td>
+								</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 				<hr />
 				<div class="text-center">
-					<a href="/admin/staff?p=0" class="btn btn-primary">First</a> <a
-						href="/admin/staff?p=${page.number-1}" class="btn btn-primary">Previous</a>
-					<a href="/admin/staff?p=${page.number+1}" class="btn btn-primary">Next</a>
-					<a href="/admin/staff?p=${page.totalPages-1}"
-						class="btn btn-primary">Last</a>
+					<a href="/admin/staff?p=0" class="btn btn-primary"><i class="bi bi-skip-backward-fill"></i></a>
+					<a href ="/admin/staff?p=${page.number-1 }" class="btn btn-primary"><i class="bi bi-skip-start-fill"></i></a>
+					<a href="/admin/staff?p=${page.number+1}" class="btn btn-primary"><i class="bi bi-skip-end-fill"></i></a>
+					<a href="/admin/staff?p=${page.totalPages-1}" class="btn btn-primary"><i class="bi bi-skip-forward-fill"></i></a>
 				</div>
 				<hr />
 			</div>
@@ -74,7 +72,8 @@
 
 	<!-- footer -->
 
-	<footer class="footer text-center"> &copy; PS 19944 - Nguyễn Quốc Huy  </footer>
+	<footer class="footer text-center"> &copy; PS 19944 - Nguyễn
+		Quốc Huy </footer>
 
 	<!-- End footer -->
 

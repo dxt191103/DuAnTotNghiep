@@ -81,7 +81,7 @@ public class ServiceController {
 //				errorMsg +="Lỗi ở: " + key + ", lí do: " + errors.get(key) + "\n";
 			}
 			model.addAttribute("message", errorMsg);
-			return "forward:/home/register";
+			return "forward:/admin/serviceControl";
 		} else {
 			dao.save(item);
 			model.addAttribute("message", "Thêm mới thành công");

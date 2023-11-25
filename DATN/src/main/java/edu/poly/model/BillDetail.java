@@ -36,7 +36,7 @@ public class BillDetail implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "Service_id")
 	@Size(min=1)
-	Services service;
+	Services services;
 	@Min(1)
 	Double price;
 

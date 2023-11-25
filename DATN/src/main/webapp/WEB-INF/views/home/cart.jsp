@@ -20,10 +20,6 @@
 					<div class="row">
 
 						<div class="col-lg-7">
-							<h5 class="mb-3">
-								<a href="services" class="text-body"><i
-									class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a>
-							</h5>
 							<hr>
 
 							<div
@@ -49,9 +45,10 @@
 									</tr>
 								</thead>
 								<tbody>
-									<form action="/cart/update" medthot="post">
-									<input type="hidden" name="id" value="${item.id}"/> 
+								<form action="/cart/update" medthot="post">
+									
 									<c:forEach var="item" items = "${CART_ITEMS}">
+										<input type="hidden" name="id" value="${item.id}"/> 
 										<tr>
 										<td scope="col">${item.serviceid}</td>
 										<td scope="col">${item.name}</td>
@@ -59,12 +56,22 @@
 										<td scope="col">
 										<input name="qty" value="${item.qty}" onblur="this.form.submit()">
 										</td>
+										<td scope="col">
+										<a class="btn btn-primary btn-sm" href="/cart/del/${item.serviceid}">
+											<i class="bi bi-radioactive"></i>
+										</a>
+										</td>
 									</tr>
 									</c:forEach>
-									</form>
+								</form>
 									
 								</tbody>
 							</table>
+							<hr/>
+							<a class="btn btn-primary btn-sm" href="/cart/clear"> <i class="bi bi-x-circle"></i> Clear Cart</a>
+							<a href="services" class="text-body"><i
+									class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a>
+							
 
 						</div>
 						<div class="col-lg-5">
@@ -137,12 +144,12 @@
 
 									<div class="d-flex justify-content-between mb-4">
 										<p class="mb-2">Total(Incl. taxes)</p>
-										<p class="mb-2">$4818.00</p>
+										<p class="mb-2">${item.price *item.qty}</p>
 									</div>
 
 									<button type="button" class="btn btn-info btn-block btn-lg">
 										<div class="d-flex justify-content-between">
-											<span>$4818.00</span> <span>Checkout <i
+											<span>${item.price *item.qty}</span> <span>Checkout <i
 												class="fas fa-long-arrow-alt-right ms-2"></i></span>
 										</div>
 									</button>

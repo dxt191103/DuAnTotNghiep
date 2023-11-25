@@ -34,7 +34,8 @@ public class Review implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "Service_id")
 	@Size(min=1)
-	Services service;
+	Services services;
+
 	@ManyToOne
 	@JoinColumn(name = "Customer")
 	@Size(min=1)
