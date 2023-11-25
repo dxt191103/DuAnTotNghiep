@@ -30,6 +30,7 @@ public class Sale implements Serializable{
 	@JoinColumn(name = "Service_id")
 	@Size(min=1)
 	Services services;
+
 	@Size(min=1)
 	boolean admin;
 	

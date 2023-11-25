@@ -24,6 +24,7 @@
 							<th style="font-weight: bolder; font-size: 18px">Image</th>
 							<th style="font-weight: bolder; font-size: 18px">Email</th>
 							<th style="font-weight: bolder; font-size: 18px">Experience</th>
+							<th style="font-weight: bolder; font-size: 18px">Shift</th>
 							<th style="font-weight: bolder; font-size: 18px">Role</th>
 							<th style="font-weight: bolder; font-size: 18px">Status</th>
 						</tr>
@@ -40,6 +41,7 @@
 									width=50% /></td>
 								<td>${item.mail}</td>
 								<td>${item.experience}</td>
+								<td>${item.shift.id}</td>
 								<td>${item.role.name}</td>
 								<td>${item.status}</td>
 								<td><a class='btn btn-warning btn-xs'

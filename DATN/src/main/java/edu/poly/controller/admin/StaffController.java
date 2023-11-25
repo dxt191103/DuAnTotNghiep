@@ -34,6 +34,7 @@ import edu.poly.dao.ShiftStaffDAO;
 import edu.poly.dao.StaffDAO;
 import edu.poly.model.Role;
 import edu.poly.model.Shift;
+import edu.poly.model.ShiftStaff;
 import edu.poly.model.Staff;
 @RequestMapping("admin")
 @Controller
@@ -43,7 +44,9 @@ public class StaffController {
 	@Autowired
 	RoleDAO Rdao;
 	@Autowired
-	ShiftDAO Sdao;
+	ShiftStaffDAO Sdao;
+	@Autowired
+	ShiftDAO Shdao;
 	
 	@RequestMapping("staff")
 	public String paginate(Model model,	@RequestParam("p") Optional<Integer> p) {
@@ -65,7 +68,7 @@ public class StaffController {
 		model.addAttribute("item", item);
 		List<Role> list = Rdao.findAll();
 		model.addAttribute("y", list);
-		List<Shift> lists = Sdao.findAll();
+		List<Shift> lists = Shdao.findAll();
 		model.addAttribute("s", lists);
 		return "admin/staffControl";
 	}
@@ -76,7 +79,7 @@ public class StaffController {
 		model.addAttribute("item", item);
 		List<Role> list = Rdao.findAll();
 		model.addAttribute("y", list);
-		List<Shift> lists = Sdao.findAll();
+		List<Shift> lists = Shdao.findAll();
 		model.addAttribute("s", lists);
 		return "admin/staffControl";
 	}
@@ -129,7 +132,7 @@ public class StaffController {
 		} else {
 			Role roleId = item.getRole();
 			System.err.println(roleId.getId());
-
+			
 			dao.save(item);
 			model.addAttribute("message", "Thêm mới thành công");
 		}

@@ -3,6 +3,7 @@ package edu.poly.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,7 +46,8 @@ public class Staff implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="Role")
 	Role role;
-	
+	@OneToMany(mappedBy = "staff")
+	Set<ShiftStaff> shiftStaffs;
 	
 	boolean status;
 	
