@@ -23,7 +23,7 @@
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
-                                    <label for="save-pass">
+                                   <label for="save-pass">
                                         Save Password
                                         <input type="checkbox" name="remember" id="save-pass">
                                         <span class="checkmark"></span>

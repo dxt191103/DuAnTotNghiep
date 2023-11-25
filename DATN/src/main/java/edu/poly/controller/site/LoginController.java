@@ -41,9 +41,6 @@ public class LoginController {
 	public String loginPost(Model model) {
 		String username = paramService.getString("username", "");
 		String password = paramService.getString("password", "");
-//		String fullname = paramService.getString("fullname", "");
-//		String phone = paramService.getString("phone", "");
-//		String email = paramService.getString("email", "");
 		
 		boolean remember = paramService.getBoolean("remember", false);
 		try {
@@ -59,7 +56,7 @@ public class LoginController {
 					cookieService.remove("username");
 					cookieService.remove("password");
 				}
-				return "home/index";
+				return "home/login";
 			}
 		} catch (Exception e) {
 			model.addAttribute("message", "Account is invalid!");

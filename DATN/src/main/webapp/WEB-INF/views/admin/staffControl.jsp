@@ -84,6 +84,16 @@
 											is invalid</small>
 									</div>
 									<div class="form-group">
+										<form:select class="form-control" path="shift.id"
+											aria-describedby="usHid">
+											<c:forEach var="shift" items="${s}">
+												<form:option path="shift" value="${shift.id}">${shift.id}</form:option>
+											</c:forEach>
+										</form:select>
+										<small id="usHid" class="form-text text-muted">Shift
+											không hợp lệ</small>
+									</div>
+									<div class="form-group">
 										<form:select class="form-control" path="role.id"
 											aria-describedby="usHid">
 											<c:forEach var="role" items="${y}">

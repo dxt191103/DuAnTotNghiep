@@ -18,7 +18,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "Service")
-public class Service implements Serializable{
+public class Services implements Serializable{
 	
 	@Id
 	@Size(min=2, max=10, message = "Id phải có từ 2 đến 10 ký tự")

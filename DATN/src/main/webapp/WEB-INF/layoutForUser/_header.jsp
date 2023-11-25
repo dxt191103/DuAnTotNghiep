@@ -59,12 +59,21 @@
                             <a class="nav-link" href="/home/aboutus">About Us</a>
                         </li>
                         <li class="nav-item menu-item menu-item-has-child">
-                            <a class="nav-link" href="#">Account</a>
-                            <ul class="sub-menu">
-                                <li><a href="/home/login">Login</a></li>
-                                <li><a href="/home/register">Register</a></li>
-                                <li><a href="/home/change-password">Change password</a></li>
-                            </ul>
+                                <c:if test="${!isLogin}">
+                                 <a class="nav-link" href="#">Account</a>
+                           		 <ul class="sub-menu">
+									<li><a href="/home/login">Login</a></li>
+									<li><a href="/home/register">Register</a></li>
+									<li><a href="/home/change-password">Change password</a></li>
+								 </ul>
+								</c:if>
+								<c:if test="${isLogin}">
+									<a href="profile" class="nav-link"
+										style="font-weight: bolder;">${fullname}</a>
+	                           		 <ul class="sub-menu">
+										<li><a class="text-danger" id="btnLogOff" href="/logout" title="">[Logout]</a></li>
+									 </ul>
+								</c:if>	
                         </li>
                     </ul>
                 </div>
