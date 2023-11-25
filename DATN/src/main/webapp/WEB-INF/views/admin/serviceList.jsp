@@ -53,6 +53,7 @@
 					<a href="/admin/service?p=${page.number+1}" class="btn btn-primary"><i class="bi bi-skip-end-fill"></i></a>
 					<a href="/admin/service?p=${page.totalPages-1}" class="btn btn-primary"><i class="bi bi-skip-forward-fill"></i></a>
 				</div>
+				
 				<hr />
 			</div>
 		</div>
