@@ -30,8 +30,8 @@ public class Sale implements Serializable{
 	@JoinColumn(name = "Service_id")
 	@Size(min=1)
 	Service service;
-	@Size(min=1)
-	boolean admin;
+//	@Size(min=1)
+//	boolean admin;
 	
 //	@OneToMany(mappedBy = "Sale")
 //	List<Service> ID;
