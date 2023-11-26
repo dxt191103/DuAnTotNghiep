@@ -59,8 +59,14 @@ public class ServiceController {
 	}
 
 	@RequestMapping("/service/edit/{id}")
-	public String edit(Model model, @PathVariable("id") String id) {
-		Services item = dao.findById(id).get();
+	public String edit(Model model, @PathVariable("id") int id) {
+		List<Services> list = dao.findAll();
+		Services item = new Services();
+		for (Services services : list) {
+			if (services.getId()==id) {
+				item=services;
+			}
+		}
 		model.addAttribute("item", item);
 //		List<Service> items = dao.findAll();
 //		model.addAttribute("items", items);
@@ -89,9 +95,10 @@ public class ServiceController {
 		return "forward:/admin/serviceControl";
 	}
 
-	@RequestMapping("/service/delete/{id}")
-	public String create(@PathVariable("id") String id) {
-		dao.deleteById(id);
+	@RequestMapping("/service/delete")
+	public String create(@Valid Services item,  BindingResult br) {
+		item.setStatus(false);
+		dao.save(item);
 		return "redirect:/admin/service";
 	}
 	
@@ -109,7 +116,7 @@ public class ServiceController {
 //				errorMsg +="Lỗi ở: " + key + ", lí do: " + errors.get(key) + "\n";
 			}
 			model.addAttribute("message", errorMsg);
-		} else {
+		} else {	
 			model.addAttribute("message", "Cập nhật thành công");
 			dao.save(item);
 		}

@@ -40,7 +40,7 @@ public class BillDetailController {
 	
 
 	@RequestMapping("billDetail")
-	public String locBrand(Model model, @RequestParam("id") String id, @RequestParam("p") Optional<Integer> p) {
+	public String locBrand(Model model, @RequestParam("id") int id, @RequestParam("p") Optional<Integer> p) {
 		Bill bill = new Bill();
 		List<Bill> bills = billDAO.findAll();
 		for (Bill bl : bills) {
@@ -52,7 +52,7 @@ public class BillDetailController {
 		model.addAttribute("bl", bill);
 		
 		Pageable pageable = PageRequest.of(p.orElse(0), 999);
-		Page<BillDetail> page = billDetailDAO.findByBill(id, pageable);
+		Page<BillDetail> page = billDetailDAO.findByBill(String.valueOf(id), pageable);
 		int currentPage =1;
 		int totalItems = page.getNumberOfElements();
 		int totalPages = page.getTotalPages();

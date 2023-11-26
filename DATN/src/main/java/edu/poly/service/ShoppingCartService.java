@@ -10,8 +10,8 @@ public interface ShoppingCartService {
 	int getCount();
 	Collection<CartItem> getAllItems();
 	void clear();
-	CartItem update(String serID, int qty);
-	void remove(String id);
+	CartItem update(int serID, int qty);
+	void remove(int id);
 	void add(CartItem item);
 	
 }

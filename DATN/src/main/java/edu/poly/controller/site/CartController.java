@@ -51,11 +51,11 @@ public class CartController {
 
 	
 	@GetMapping("/add/{id}")
-	public String addCart(@PathVariable("id") String id) {
+	public String addCart(@PathVariable("id") int id) {
 		List<Services> xx = Sdao.findAll();
 		Services service = new Services();
 		for (Services services : xx) {
-			if (services.getId().equals(id)) {
+			if (services.getId()==id) {
 				service = services;
 			}
 		}
@@ -77,13 +77,13 @@ public class CartController {
 		return "redirect:/home/cart"; 
 	}
 	@GetMapping("/remove/{id}")
-	public String delCart(@PathVariable("id") String id){
+	public String delCart(@PathVariable("id") int id){
 		cartService.remove(id);
 		return "redirect:/home/cart"; 
 	}
 	
 	@PostMapping("update")
-	public String update(@RequestParam("id") String Id,@RequestParam("qty") int qty) {
+	public String update(@RequestParam("id") int Id,@RequestParam("qty") int qty) {
 		
 		cartService.update(Id, qty);
 		return "redirect:/home/cart";
