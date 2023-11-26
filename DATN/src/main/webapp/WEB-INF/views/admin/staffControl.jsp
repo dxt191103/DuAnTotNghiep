@@ -24,10 +24,8 @@
 							<div class="col row">
 								<div class="col-6">
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="id" path="id"
+										<form:input type="hidden" class="form-control" id="id" path="id"
 											aria-describedby="usHid" placeholder="Product ID" />
-										<small id="usHid" class="form-text text-muted">Staff
-											ID is invalid</small>
 									</div>
 									<div class="form-group">
 										<form:input type="text" class="form-control" id="name"
@@ -83,16 +81,7 @@
 										<small id="usHid" class="form-text text-muted">Experience
 											is invalid</small>
 									</div>
-									<div class="form-group">
-										<form:select class="form-control" path="shift.id"
-											aria-describedby="usHid">
-											<c:forEach var="shift" items="${s}">
-												<form:option path="shift" value="${shift.id}">${shift.id}</form:option>
-											</c:forEach>
-										</form:select>
-										<small id="usHid" class="form-text text-muted">Shift
-											không hợp lệ</small>
-									</div>
+									
 									<div class="form-group">
 										<form:select class="form-control" path="role.id"
 											aria-describedby="usHid">

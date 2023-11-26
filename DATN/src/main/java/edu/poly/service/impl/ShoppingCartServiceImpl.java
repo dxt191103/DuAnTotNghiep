@@ -26,17 +26,17 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService{
 	public void add(CartItem item) {
 		CartItem cartItem = maps.get(item.getServiceid());
 		if (cartItem == null) {
-			maps.put(item.getServiceid(), cartItem);
+			maps.put(String.valueOf(item.getServiceid()), cartItem);
 		} else {
 			cartItem.setQty(cartItem.getQty() + 1);
 		}
 	}
 	@Override
-	public void remove(String id) {
+	public void remove(int id) {
 		maps.remove(id);
 	}
 	@Override
-	public CartItem update(String serID,int qty) {
+	public CartItem update(int serID,int qty) {
 		CartItem cartItem = maps.get(serID);
 		cartItem.setQty(qty);
 		return cartItem;

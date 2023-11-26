@@ -136,7 +136,7 @@ public class StaffController {
 			dao.save(item);
 			model.addAttribute("message", "Thêm mới thành công");
 		}
-
+		dao.save(item);
 		return "redirect:/admin/staff/edit/" + item.getId();
 	}
 	

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CartItem {
-	String serviceid;
+	int serviceid;
 	String name;
 	double price;
 	int qty = 1;
