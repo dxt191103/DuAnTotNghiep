@@ -15,7 +15,6 @@
                                 <li class="sidebar-item"><a href="/admin/staff" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Staff Controller </span></a></li>
                                 <li class="sidebar-item"><a href="/admin/service" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Service Controller </span></a></li>
                                 <li class="sidebar-item"><a href="/admin/bill" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Bill Controller </span></a></li>
-                                <li class="sidebar-item"><a href="/admin/sale" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Sale Controller </span></a></li>
                             </ul>
                         </li>
                     </ul>
