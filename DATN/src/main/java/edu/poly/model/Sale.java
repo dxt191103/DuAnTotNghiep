@@ -3,6 +3,7 @@ package edu.poly.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -11,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Columns;
 
 import lombok.Data;
 
@@ -21,7 +24,6 @@ public class Sale implements Serializable{
 	@Id
 	@Size(min=1)
 	String id;
-	@Size(min=1)
 	@Min(1)
 	int percentPrice;
 	@Size(min=1)

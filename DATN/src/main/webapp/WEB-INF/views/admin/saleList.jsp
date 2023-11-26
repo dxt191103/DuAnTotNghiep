@@ -29,7 +29,7 @@
 								<td>${item.id}</td>
 								<td>${item.percentPrice}</td>
 								<td>${item.type}</td>
-								<td>${item.service}</td>
+								<td>${item.service.id}</td>
 								<td><a class='btn btn-warning btn-xs'
 									style="font-size: 14px" href="sale/edit/${item.id}"> <span
 										class="glyphicon glyphicon-edit"></span> <i
