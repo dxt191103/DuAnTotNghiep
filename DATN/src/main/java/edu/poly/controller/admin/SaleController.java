@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 import edu.poly.dao.SaleDAO;
 import edu.poly.dao.ServiceDAO;
 import edu.poly.model.Sale;
-import edu.poly.model.Service;
+import edu.poly.model.Services;
 
 @RequestMapping("admin")
 @Controller

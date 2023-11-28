@@ -33,8 +33,8 @@ public class Sale implements Serializable{
 	@Size(min=1)
 	Services services;
 
-	@Size(min=1)
-	boolean admin;
+//	@Size(min=1)
+//	boolean admin;
 
 	
 //	@OneToMany(mappedBy = "Sale")
