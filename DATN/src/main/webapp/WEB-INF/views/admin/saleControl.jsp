@@ -43,8 +43,8 @@
 											Type is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="service"
-											path="service" aria-describedby="serviceHid"
+										<form:input type="text" class="form-control" id="service.id"
+											path="service.id" aria-describedby="serviceHid"
 											placeholder="service" />
 										<small id="serviceHid" class="form-text text-muted">Service
 											is invalid</small>
@@ -62,7 +62,7 @@
 							<button type="button" class="btn btn-danger" data-toggle="modal"
 								data-target="#deleteModal">Delete</button>
 							<button type="submit" class="btn btn-success"
-								formaction="/admin/serviceControl">Reset</button>
+								formaction="/admin/saleControl">Reset</button>
 						</div>
 						<div class="modal fade" id="insertModal" tabindex="-1"
 							role="dialog" aria-labelledby="exampleModalLabel"
@@ -70,7 +70,7 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Service
+										<h5 class="modal-title" id="exampleModalLabel">Sale
 											insert title</h5>
 										<button type="button" class="close" data-dismiss="modal"
 											aria-label="Close">
@@ -81,7 +81,7 @@
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">No</button>
-										<button type="submit" formaction="/admin/service/create"
+										<button type="submit" formaction="/admin/sale/create"
 											class="btn btn-primary">Yes</button>
 									</div>
 								</div>
@@ -93,7 +93,7 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Service
+										<h5 class="modal-title" id="exampleModalLabel">Sale
 											update title</h5>
 										<button type="button" class="close" data-dismiss="modal"
 											aria-label="Close">
@@ -104,7 +104,7 @@
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">No</button>
-										<button type="submit" formaction="/admin/service/update"
+										<button type="submit" formaction="/admin/sale/update"
 											class="btn btn-primary">Yes</button>
 									</div>
 								</div>
@@ -116,7 +116,7 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Service
+										<h5 class="modal-title" id="exampleModalLabel">Sale
 											delete title</h5>
 										<button type="button" class="close" data-dismiss="modal"
 											aria-label="Close">
@@ -128,7 +128,7 @@
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">No</button>
 										<button type="submit"
-											formaction="/admin/service/delete/${items.id}"
+											formaction="/admin/sale/delete/${items.id}"
 											class="btn btn-primary">Yes</button>
 									</div>
 								</div>
