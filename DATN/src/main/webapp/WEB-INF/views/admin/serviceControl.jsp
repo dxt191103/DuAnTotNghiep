@@ -24,15 +24,16 @@
 							<div class="col row">
 								<div class="col-6">
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="id" path="id"
-											aria-describedby="usHid" placeholder="Service ID" />
-										<small id="usHid" class="form-text text-muted">Service
-											ID is invalid</small>
+										<form:input type="hidden" class="form-control" id="id"
+											path="id" aria-describedby="usHid" placeholder="Service ID" />
 									</div>
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="name"
-											path="name" aria-describedby="nameHid"
-											placeholder="Service Name"  />
+										<form:input type="text" class="form-control"
+											id="name" path="name" aria-describedby="nameHid"
+											placeholder="Service Name" />
+										<div class="valid-feedback">Valid.</div>
+										<div class="invalid-feedback">Please fill out this
+											field.</div>
 										<small id="nameHid" class="form-text text-muted">Service
 											Name is invalid</small>
 									</div>
@@ -63,7 +64,7 @@
 											Descripsion is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="file" class="form-control" id="image"
+										<form:input type="file" class="form-control" id="imageFile"
 											path="image" aria-describedby="imageHid" placeholder="image" />
 										<small id="imageHid" class="form-text text-muted">Image
 											is invalid</small>
@@ -72,7 +73,7 @@
 							</div>
 
 						</div>
-						
+
 						<div class="card-footer text-muted">
 							<button type="button" class="btn btn-primary "
 								data-toggle="modal" data-target="#insertModal">Insert</button>
@@ -146,8 +147,7 @@
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">No</button>
-										<button type="submit"
-											formaction="/admin/service/delete/${items.id}"
+										<button type="submit" formaction="/admin/service/delete"
 											class="btn btn-primary">Yes</button>
 									</div>
 								</div>
@@ -179,6 +179,7 @@
 
 	</div>
 </div>
+
 <!-- End Page wrapper  -->
 
 

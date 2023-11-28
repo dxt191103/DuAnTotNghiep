@@ -1949,7 +1949,7 @@ footer .footer-bottom{
 	left: 0;
 	top: 4px;
 	height: 13px;
-	width: 13px;
+	width: 14px;
 	border: 1px solid #6C6C6C;
 	border-radius: 2px;
 }
@@ -1976,8 +1976,8 @@ footer .footer-bottom{
 
 .site-btn {
 	color: #ffffff;
-	background: #e7ab3c;
-	border: 1px solid #e7ab3c;
+	background: #4da92e;
+	border: 1px solid #4da92e;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;

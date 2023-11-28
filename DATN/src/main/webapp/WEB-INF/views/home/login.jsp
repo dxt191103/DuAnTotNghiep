@@ -23,7 +23,7 @@
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
-                                    <label for="save-pass">
+                                   <label for="save-pass">
                                         Save Password
                                         <input type="checkbox" name="remember" id="save-pass">
                                         <span class="checkmark"></span>
@@ -33,32 +33,8 @@
                                 
                             </div>
                           <!-- Button trigger modal -->
-						<button type="button" class="site-btn login-btn" data-toggle="modal"
+						<button type="submit" class="site-btn login-btn" data-toggle="modal"
 							data-target="#exampleModal">Sign In</button>
-
-						<!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1"
-							role="dialog" aria-labelledby="exampleModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Login
-											title</h5>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">Are you sure about that ???</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary"
-											data-dismiss="modal">No</button>
-										<button type="submit" class="btn btn-primary">Yes</button>
-									</div>
-								</div>
-							</div>
-						</div>
 					</form>
                         <div class="switch-login">
                             <a href="register" class="or-login">Or Create An Account</a>

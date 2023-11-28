@@ -3,6 +3,7 @@ package edu.poly.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
@@ -43,9 +45,9 @@ public class Staff implements Serializable{
 	int experience;
 	@ManyToOne
 	@JoinColumn(name="Role")
-	@Size(min=1)
 	Role role;
-	
+	@OneToMany(mappedBy = "staff")
+	List<ShiftStaff> shiftStaffs;
 	
 	boolean status;
 	

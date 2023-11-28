@@ -77,7 +77,7 @@
                 </div>
                 <div class="d-flex flex-column mt-4">
                   <button class="btn btn-outline-primary btn-sm mt-2" type="button">
-                    Add to wishlist
+                    <a href="/home/add/${item.id}">Add to wishlist</a>            
                   </button>
                 </div>
               </div>

@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import edu.poly.dao.ServiceDAO;
-import edu.poly.model.Service;
+import edu.poly.model.Services;
 
 @RequestMapping("admin")
 @Controller
@@ -40,7 +40,7 @@ public class ServiceController {
 	@RequestMapping("service")
 	public String paginate(Model model, @RequestParam("p") Optional<Integer> p) {
 		Pageable pageable = PageRequest.of(p.orElse(0), 5);
-		Page<Service> page = dao.findAll(pageable);
+		Page<Services> page = dao.findAll(pageable);
 		int currentPage = 1;
 		int totalItems = page.getNumberOfElements();
 		int totalPages = page.getTotalPages();
@@ -53,14 +53,20 @@ public class ServiceController {
 
 	@RequestMapping("/serviceControl")
 	public String control(Model model) {
-		Service item = new Service();
+		Services item = new Services();
 		model.addAttribute("item", item);
 		return "admin/serviceControl";
 	}
 
 	@RequestMapping("/service/edit/{id}")
-	public String edit(Model model, @PathVariable("id") String id) {
-		Service item = dao.findById(id).get();
+	public String edit(Model model, @PathVariable("id") int id) {
+		List<Services> list = dao.findAll();
+		Services item = new Services();
+		for (Services services : list) {
+			if (services.getId()==id) {
+				item=services;
+			}
+		}
 		model.addAttribute("item", item);
 //		List<Service> items = dao.findAll();
 //		model.addAttribute("items", items);
@@ -68,7 +74,7 @@ public class ServiceController {
 	}
 
 	@RequestMapping("/service/create")
-	public String create(@Valid Service item, BindingResult br, Model model) {
+	public String create(@Valid Services item, BindingResult br, Model model) {
 		if (br.hasErrors()) {
 			Map<String, String> errors = new HashMap<>();
 
@@ -89,14 +95,15 @@ public class ServiceController {
 		return "forward:/admin/serviceControl";
 	}
 
-	@RequestMapping("/service/delete/{id}")
-	public String create(@PathVariable("id") String id) {
-		dao.deleteById(id);
+	@RequestMapping("/service/delete")
+	public String create(@Valid Services item,  BindingResult br) {
+		item.setStatus(false);
+		dao.save(item);
 		return "redirect:/admin/service";
 	}
 	
 	@RequestMapping("/service/update")
-	public String update(@Valid Service item,  BindingResult br ,Model model) {
+	public String update(@Valid Services item,  BindingResult br ,Model model) {
 		if (br.hasErrors()) {
 			Map<String, String> errors = new HashMap<>();
 
@@ -109,7 +116,7 @@ public class ServiceController {
 //				errorMsg +="Lỗi ở: " + key + ", lí do: " + errors.get(key) + "\n";
 			}
 			model.addAttribute("message", errorMsg);
-		} else {
+		} else {	
 			model.addAttribute("message", "Cập nhật thành công");
 			dao.save(item);
 		}

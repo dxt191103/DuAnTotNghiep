@@ -23,8 +23,8 @@ import lombok.ToString;
 @Table(name = "Bill_detail")
 public class BillDetail implements Serializable{
 	@Id
-	@Size(min=1)
-	String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
 	@ManyToOne
 	@JoinColumn(name = "Staff_id")
 	@Size(min=1)
@@ -36,7 +36,7 @@ public class BillDetail implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "Service_id")
 	@Size(min=1)
-	Service service;
+	Services services;
 	@Min(1)
 	Double price;
 
