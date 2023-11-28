@@ -48,20 +48,15 @@
 								<form action="/cart/update" medthot="post">
 									
 									<c:forEach var="item" items = "${CART_ITEMS}">
-										<input type="hidden" name="id" value="${item.id}"/> 
 										<tr>
-										<td scope="col">${item.serviceid}</td>
-										<td scope="col">${item.name}</td>
-										<td scope="col">${item.price}</td>
-										<td scope="col">
-										<input name="qty" value="${item.qty}" onblur="this.form.submit()">
-										</td>
-										<td scope="col">
-										<a class="btn btn-primary btn-sm" href="/cart/del/${item.serviceid}">
-											<i class="bi bi-radioactive"></i>
-										</a>
-										</td>
-									</tr>
+										<td>${item.name}</td>
+										<td>${item.name}</td>
+										<td>${item.name}</td>
+										<td>${item.name}</td>
+										</tr>
+										
+										
+									
 									</c:forEach>
 								</form>
 									
