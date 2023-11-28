@@ -8,12 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CartItem {
-	String serviceid;
+	String id;
 	String name;
 	double price;
+	String image;
 	int qty = 1;
-	public void addProduct(Services product) {
-		// TODO Auto-generated method stub
-		
-	}
 }
