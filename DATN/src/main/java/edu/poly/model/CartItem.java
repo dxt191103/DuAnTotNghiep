@@ -12,5 +12,5 @@ public class CartItem {
 	String name;
 	double price;
 	String image;
-	int qty = 1;
+	int qty=0;
 }

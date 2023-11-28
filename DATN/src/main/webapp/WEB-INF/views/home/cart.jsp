@@ -49,10 +49,11 @@
 									
 									<c:forEach var="item" items = "${CART_ITEMS}">
 										<tr>
+										<td>${item.id}</td>
 										<td>${item.name}</td>
-										<td>${item.name}</td>
-										<td>${item.name}</td>
-										<td>${item.name}</td>
+										<td>${item.price}</td>
+										<td>${item.qty}</td>
+										<td><a class="btn btn-primary btn-sm" href="/home/cart/remove/${item.id}"> <i class="bi bi-x-circle"></i></a></td>
 										</tr>
 										
 										
@@ -63,8 +64,8 @@
 								</tbody>
 							</table>
 							<hr/>
-							<a class="btn btn-primary btn-sm" href="/cart/clear"> <i class="bi bi-x-circle"></i> Clear Cart</a>
-							<a href="services" class="text-body"><i
+							<a class="btn btn-primary btn-sm" href="/home/cart/clear"> <i class="bi bi-x-circle"></i> Clear Cart</a>
+							<a href="/home/services" class="text-body"><i
 									class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a>
 							
 
