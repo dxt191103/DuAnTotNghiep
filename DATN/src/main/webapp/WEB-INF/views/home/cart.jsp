@@ -38,10 +38,10 @@
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<th scope="col">Id</th>
 										<th scope="col">Name</th>
 										<th scope="col">Price</th>
 										<th scope="col">Qty</th>
+										<th scope="col">Total</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -49,10 +49,10 @@
 									
 									<c:forEach var="item" items = "${CART_ITEMS}">
 										<tr>
-										<td>${item.id}</td>
-										<td>${item.name}</td>
+										<td name="id">${item.name}</td>
 										<td>${item.price}</td>
-										<td>${item.qty}</td>
+										<td name="qty">${item.qty}</td>
+										<td>${item.qty * item.price}</td>
 										<td><a class="btn btn-primary btn-sm" href="/home/cart/remove/${item.id}"> <i class="bi bi-x-circle"></i></a></td>
 										</tr>
 										
@@ -140,12 +140,12 @@
 
 									<div class="d-flex justify-content-between mb-4">
 										<p class="mb-2">Total(Incl. taxes)</p>
-										<p class="mb-2">${item.price *item.qty}</p>
+										<p class="mb-2">${total}</p>
 									</div>
 
 									<button type="button" class="btn btn-info btn-block btn-lg">
 										<div class="d-flex justify-content-between">
-											<span>${item.price *item.qty}</span> <span>Checkout <i
+											<span>${total}</span><span>Checkout <i
 												class="fas fa-long-arrow-alt-right ms-2"></i></span>
 										</div>
 									</button>

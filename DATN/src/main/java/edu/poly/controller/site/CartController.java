@@ -27,37 +27,31 @@ public class CartController {
 	ServiceDAO daoS;
 
 	List<CartItem> list = new ArrayList<>();
-
+	CartItem cartItem = new CartItem();
+	int qty = cartItem.getQty();
 	@RequestMapping("cart")
 	public String index(Model model) {
 		model.addAttribute("CART_ITEMS", list);
+		model.addAttribute("total", cart.getAmount());
+
 		return "home/cart";
 	}
 
 	@RequestMapping("/cart/add/{id}")
 	public String add(@PathVariable("id") String id) {
-		CartItem cartItem = new CartItem();
 		int a=0;
-		int qty = cartItem.getQty();
+		
 		for (Services sv : daoS.findAll()) {
 			if (id.equals(sv.getId())) {
 				cartItem.setId(id);
 				cartItem.setName(sv.getName());
 				cartItem.setPrice(sv.getPrice());
 				cartItem.setImage(sv.getImage());
-				cartItem.setQty(cartItem.getQty()+1);
-				list.add(cartItem);
+				cartItem.setQty(qty+1);
+				cart.add(id);
+				list.add(cartItem);				
 			}
-			for (CartItem cartItems : list) {	
-				
-				if(cartItems.getId().equals(id)) {
-					list.get(a).setQty(qty +1);
-
-					break;
-				}
-				a++;
-			} 
-		}		
+		}
 		return "forward:/home/cart";
 	}
 
@@ -92,6 +86,7 @@ public class CartController {
 
 	@RequestMapping("/cart/clear")
 	public String clear() {
+		cart.clear();
 		list.clear();
 		return "forward:/home/cart";
 	}
