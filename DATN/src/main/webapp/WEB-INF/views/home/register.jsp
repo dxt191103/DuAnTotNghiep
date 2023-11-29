@@ -25,23 +25,23 @@
 					<p class="text-danger">${message}</p>
 					<form:form method="get" action="/home/register" modelAttribute="item">
 						<div class="group-input">
-							<label for="username">Username *:</label> 
+							<label for="username">Username:</label> 
 							<form:input path="username" type="text" id="username"/>
 						</div>
 						<div class="group-input">
-							<label for="pass">Password *:</label>
+							<label for="pass">Password:</label>
 							<form:input type="password" id="password" path="password"/>
 						</div>
 						<div class="group-input">
-							<label for="con-pass">Fullname *:</label> 
+							<label for="con-pass">Fullname:</label> 
 							<form:input type="text" id="fullname" path="fullname"/>
 						</div>
 						<div class="group-input">
-							<label for="con-pass">Phone *:</label> 
+							<label for="con-pass">Phone:</label> 
 							<form:input type="text" id="phone" path="phone"/>
 						</div>
 						<div class="group-input">
-							<label for="con-pass">Email *:</label> 
+							<label for="con-pass">Email:</label> 
 							<form:input type="text" id="email" path="email"/>
 						</div>
 						<!-- button type="submit" class="site-btn register-btn" formaction="/home/register/create">REGISTER</button>-->

@@ -33,11 +33,10 @@
                                 
                             </div>
                           <!-- Button trigger modal -->
-						<button type="submit" class="site-btn login-btn" data-toggle="modal"
-							data-target="#exampleModal">Sign In</button>
+						<button type="submit" class="site-btn login-btn">Sign In</button>
 					</form>
                         <div class="switch-login">
-                            <a href="register" class="or-login">Or Create An Account</a>
+                            <a href="/home/register" class="or-login">Or Create An Account</a>
                         </div>
                     </div>
                 </div>

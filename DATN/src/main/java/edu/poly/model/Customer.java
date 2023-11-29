@@ -24,7 +24,6 @@ public class Customer implements Serializable{
 	@Size(min=7, max=10, message = "Username phải có từ 7 đến 10 ký tự")
 	String username;
 	@Size(min=7, max=20, message = "Password phải có từ 7 đến 20 ký tự")
-	@Pattern(regexp = "(?=.*[a-z])(?=.*[A-Z])", message = "Mật khẩu phải có ít nhất 1 chữ HOA và 1 chữ thường")
 	String password;
 	@Size(min=2, max=50, message = "Tên phải có từ 2 đến 10 ký tự")
 	String fullname;

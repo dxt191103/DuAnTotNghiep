@@ -33,7 +33,7 @@ public class RegisterController {
 	@Autowired
 	CustomerDAO cusDAO;
 
-	@RequestMapping("register")
+	@RequestMapping("/register")
 	public String register(Model model) {
 		Customer item = new Customer();
 		model.addAttribute("item", item);
@@ -59,7 +59,7 @@ public class RegisterController {
 			cusDAO.save(item);
 			model.addAttribute("message", "Mọi thứ hợp lệ!");
 		}
-		return "forward:/home/login";
+		return "redirect:/home/login";
 	}
 
 }
