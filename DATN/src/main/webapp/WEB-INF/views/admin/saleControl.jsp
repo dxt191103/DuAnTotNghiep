@@ -43,10 +43,10 @@
 											Type is invalid</small>
 									</div>
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="service.id"
-											path="service.id" aria-describedby="serviceHid"
-											placeholder="service" />
-										<small id="serviceHid" class="form-text text-muted">Service
+										<form:input type="text" class="form-control" id="services.id"
+											path="services.id" aria-describedby="servicesHid"
+											placeholder="services.id" />
+										<small id="servicesHid" class="form-text text-muted">Service
 											is invalid</small>
 									</div>
 								</div>
