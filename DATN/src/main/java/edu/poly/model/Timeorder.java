@@ -15,17 +15,14 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Shift")
-public class Shift {
+@Table(name = "Timeorder")
+public class Timeorder {
 	@Id
 	@Size(min=1)
 	String Id;
 	@Size(min=1)
-	String begintime;
+	String timeline;
 	@Size(min=1)
-	String endtime;
+	int slot;
 	
-	@OneToMany
-	(mappedBy = "shift")
-	List<ShiftStaff> shiftStaffs;
 }

@@ -41,8 +41,6 @@ public class Services implements Serializable{
 	boolean status;
 	
 
-	@OneToMany(mappedBy = "services")
-	List<Sale> sale;
 //	boolean admin;
 //	@OneToMany(mappedBy = "account")
 //	List<Order> orders;

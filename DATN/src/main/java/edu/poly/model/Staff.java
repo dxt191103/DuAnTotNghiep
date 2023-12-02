@@ -46,13 +46,8 @@ public class Staff implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="Role")
 	Role role;
-	@OneToMany(mappedBy = "staff")
-	List<ShiftStaff> shiftStaffs;
 	
 	boolean status;
 	
 	
-	@OneToMany
-	(mappedBy = "staff")
-	List<BillDetail> BillDetail;
 }

@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.poly.dao.BillDAO;
-import edu.poly.dao.BillDetailDAO;
+
 import edu.poly.dao.CustomerDAO;
 import edu.poly.model.Bill;
-import edu.poly.model.BillDetail;
+
 import edu.poly.model.Customer;
 @RequestMapping("admin")
 @Controller

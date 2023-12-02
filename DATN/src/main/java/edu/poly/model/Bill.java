@@ -1,6 +1,7 @@
 package edu.poly.model;
 
 import java.io.Serializable;
+import java.security.Provider.Service;
 import java.util.Date;
 import java.util.List;
 import java.sql.Time;
@@ -34,6 +35,9 @@ public class Bill implements Serializable{
 	Customer account;
 	@Size(min=1)
 	String time;
+	@JoinColumn(name = "Service")
+	@Size(min=1)
+	Service service;
 	@Min(1)
 	Double price;
 	@Size(min=1)
@@ -44,10 +48,6 @@ public class Bill implements Serializable{
 	
 //	@Column(nullable = false, columnDefinition = "bit default 0")
 //	boolean activated;
-	
-	@OneToMany
-	(mappedBy = "bill")
-	List<BillDetail> billDetail;
 //	boolean admin;
 //	@OneToMany(mappedBy = "account")
 //	List<Order> orders;
