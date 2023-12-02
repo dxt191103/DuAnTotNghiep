@@ -1,7 +1,6 @@
 package edu.poly.model;
 
 import java.io.Serializable;
-import java.security.Provider.Service;
 import java.util.Date;
 import java.util.List;
 import java.sql.Time;
@@ -29,21 +28,33 @@ public class Bill implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
+
 	@ManyToOne
 	@JoinColumn(name = "Customer")
 	@Size(min=1)
 	Customer account;
+	
 	@Size(min=1)
 	String time;
+	
+	@ManyToOne
 	@JoinColumn(name = "Service")
-	@Size(min=1)
-	Service service;
+	Services service;
+
 	@Min(1)
 	Double price;
-	@Size(min=1)
-	String sale;
+
+	@ManyToOne
+	@JoinColumn(name = "Timeoder")
+	Timeorder timeOder;
+
+	@ManyToOne
+	@JoinColumn(name = "Sale")
+	Sale sale;
+
 	@Min(1)
 	Double total;
+	
 	
 	
 //	@Column(nullable = false, columnDefinition = "bit default 0")

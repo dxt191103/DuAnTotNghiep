@@ -34,6 +34,8 @@ public class Sale implements Serializable{
 //	@OneToMany(mappedBy = "Sale")
 //	List<Service> ID;
 	
-	
+	@OneToMany
+	(mappedBy = "sale")
+	List<Bill> bills;
 	 
 }

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Data
@@ -22,7 +23,10 @@ public class Timeorder {
 	String Id;
 	@Size(min=1)
 	String timeline;
-	@Size(min=1)
+	@Min(1)
 	int slot;
 	
+	@OneToMany
+	(mappedBy = "timeOder")
+	List<Bill> bills;
 }

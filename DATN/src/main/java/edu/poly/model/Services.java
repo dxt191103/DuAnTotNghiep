@@ -40,6 +40,9 @@ public class Services implements Serializable{
 	@Column(nullable = false, columnDefinition = "bit default 0")
 	boolean status;
 	
+	@OneToMany
+	(mappedBy = "service")
+	List<Bill> bills;
 
 //	boolean admin;
 //	@OneToMany(mappedBy = "account")
