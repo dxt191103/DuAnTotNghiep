@@ -114,7 +114,7 @@ public class SaleController {
 			dao.save(item);
 		}
 		
-		return "forward:/admin/sale/edit/" + item.getId(); // taij sao dung redirect
+		return "forward:/admin/sale/edit/" + item.getCode(); // taij sao dung redirect
 	}
 
 //	@ModelAttribute("availables")

@@ -20,9 +20,11 @@
 							<th style="font-weight: bolder; font-size: 18px">Bill ID</th>
 							<th style="font-weight: bolder; font-size: 18px">Username</th>
 							<th style="font-weight: bolder; font-size: 18px">Time</th>
+							<th style="font-weight: bolder; font-size: 18px">Service</th>
 							<th style="font-weight: bolder; font-size: 18px">Price</th>
+							<th style="font-weight: bolder; font-size: 18px">Day Order</th>
+							<th style="font-weight: bolder; font-size: 18px">Time Order</th>
 							<th style="font-weight: bolder; font-size: 18px">Sale</th>
-							<th style="font-weight: bolder; font-size: 18px">Bill Detail</th>
 							<th style="font-weight: bolder; font-size: 18px">Total</th>
 						</tr>
 					</thead>
@@ -32,10 +34,11 @@
 								<td>${item.id}</td>
 								<td>${item.account.username}</td>
 								<td>${item.time}</td>
+								<td>${item.service.name}</td>
 								<td>${item.price}</td>
-								<td>${item.sale}</td>
-								<td><a href="/admin/billDetail?id=${item.id}"
-									style="font-size: 14px">Detail</a></td>
+								<td>${item.Dayorder}</td>
+								<td>${item.timeOrder.timeline}</td>
+								<td>${item.sale.code}</td>
 								<td>${item.total}</td>
 							</tr>
 						</c:forEach>

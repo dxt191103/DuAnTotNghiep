@@ -23,15 +23,9 @@ import lombok.Data;
 public class Sale implements Serializable{
 	@Id
 	@Size(min=1)
-	String id;
+	String code;
 	@Min(1)
 	int percentPrice;
-	@Size(min=1)
-	String type;
-	@ManyToOne
-	@JoinColumn(name = "Service_id")
-	@Size(min=1)
-	Services services;
 
 //	@Size(min=1)
 //	boolean admin;
@@ -40,6 +34,8 @@ public class Sale implements Serializable{
 //	@OneToMany(mappedBy = "Sale")
 //	List<Service> ID;
 	
-	
+	@OneToMany
+	(mappedBy = "sale")
+	List<Bill> bills;
 	 
 }

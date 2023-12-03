@@ -30,11 +30,9 @@ import com.fasterxml.jackson.core.sym.Name;
 
 import edu.poly.dao.RoleDAO;
 import edu.poly.dao.ShiftDAO;
-import edu.poly.dao.ShiftStaffDAO;
 import edu.poly.dao.StaffDAO;
 import edu.poly.model.Role;
-import edu.poly.model.Shift;
-import edu.poly.model.ShiftStaff;
+import edu.poly.model.Timeorder;
 import edu.poly.model.Staff;
 @RequestMapping("admin")
 @Controller
@@ -43,8 +41,6 @@ public class StaffController {
 	StaffDAO dao;
 	@Autowired
 	RoleDAO Rdao;
-	@Autowired
-	ShiftStaffDAO Sdao;
 	@Autowired
 	ShiftDAO Shdao;
 	
@@ -68,7 +64,7 @@ public class StaffController {
 		model.addAttribute("item", item);
 		List<Role> list = Rdao.findAll();
 		model.addAttribute("y", list);
-		List<Shift> lists = Shdao.findAll();
+		List<Timeorder> lists = Shdao.findAll();
 		model.addAttribute("s", lists);
 		return "admin/staffControl";
 	}
@@ -79,7 +75,7 @@ public class StaffController {
 		model.addAttribute("item", item);
 		List<Role> list = Rdao.findAll();
 		model.addAttribute("y", list);
-		List<Shift> lists = Shdao.findAll();
+		List<Timeorder> lists = Shdao.findAll();
 		model.addAttribute("s", lists);
 		return "admin/staffControl";
 	}

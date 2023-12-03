@@ -18,16 +18,16 @@
 					<thead>
 						<tr>
 							<th style="font-weight: bolder; font-size: 18px">ID</th>
-							<th style="font-weight: bolder; font-size: 18px">BeginTime</th>
-							<th style="font-weight: bolder; font-size: 18px">EndTime</th>
+							<th style="font-weight: bolder; font-size: 18px">Timeline</th>
+							<th style="font-weight: bolder; font-size: 18px">Slot</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="item" items="${page.content}">
 							<tr>
 								<td>${item.id}</td>
-								<td>${item.begintime}</td>
-								<td>${item.endtime}</td>
+								<td>${item.timeline}</td>
+								<td>${item.slot}</td>
 								<td> 
 									<a class='btn btn-warning btn-xs' style="font-size: 14px" href="shift/edit/${item.id}"> 
 									<span class="glyphicon glyphicon-edit"></span> <i class="bi bi-pencil-square"></i></a> 

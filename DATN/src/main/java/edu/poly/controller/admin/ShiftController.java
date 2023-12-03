@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.poly.dao.ShiftDAO;
-import edu.poly.model.Shift;
+import edu.poly.model.Timeorder;
 
 
 @RequestMapping("admin")
@@ -33,7 +33,7 @@ public class ShiftController {
 	@RequestMapping("shift")
 	public String paginate(Model model,	@RequestParam("p") Optional<Integer> p) {
 		Pageable pageable = PageRequest.of(p.orElse(0), 5);
-		Page<Shift> page = dao.findAll(pageable);
+		Page<Timeorder> page = dao.findAll(pageable);
 		int currentPage =1;
 		int totalItems = page.getNumberOfElements();
 		int totalPages = page.getTotalPages();
@@ -46,14 +46,14 @@ public class ShiftController {
 	
 	@RequestMapping("/shiftControl")
 	public String control(Model model) {
-		Shift item = new Shift();
+		Timeorder item = new Timeorder();
 		model.addAttribute("item", item);
 		return "admin/shiftControl";
 	}
 
 	@RequestMapping("/shift/edit/{id}")
 	public String edit(Model model, @PathVariable("id") String id) {
-		Shift item = dao.findById(id).get();
+		Timeorder item = dao.findById(id).get();
 		model.addAttribute("item", item);
 //		List<Service> items = dao.findAll();
 //		model.addAttribute("items", items);
@@ -61,7 +61,7 @@ public class ShiftController {
 	}
 	
 	@RequestMapping("/shift/create")
-	public String create(@Valid Shift item, BindingResult br, Model model) {
+	public String create(@Valid Timeorder item, BindingResult br, Model model) {
 		if (br.hasErrors()) {
 			Map<String, String> errors = new HashMap<>();
 
@@ -88,7 +88,7 @@ public class ShiftController {
 	}
 	
 	@RequestMapping("/shift/update")
-	public String update(@Valid Shift item,BindingResult br, Model model) {
+	public String update(@Valid Timeorder item,BindingResult br, Model model) {
 		if (br.hasErrors()) {
 			Map<String, String> errors = new HashMap<>();
 

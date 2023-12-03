@@ -17,24 +17,20 @@
 				<table class="table text-center">
 					<thead>
 						<tr>
-							<th style="font-weight: bolder; font-size: 18px">ID</th>
+							<th style="font-weight: bolder; font-size: 18px">Code</th>
 							<th style="font-weight: bolder; font-size: 18px">Percent Price</th>
-							<th style="font-weight: bolder; font-size: 18px">Type</th>
-							<th style="font-weight: bolder; font-size: 18px">Service id</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="item" items="${page.content}">
 							<tr>
-								<td>${item.id}</td>
+								<td>${item.code}</td>
 								<td>${item.percentPrice}</td>
-								<td>${item.type}</td>
-								<td>${item.services.id}</td>
 								<td><a class='btn btn-warning btn-xs'
-									style="font-size: 14px" href="sale/edit/${item.id}"> <span
+									style="font-size: 14px" href="/admin/sale/edit/${item.code}"> <span
 										class="glyphicon glyphicon-edit"></span> <i
 										class="bi bi-pencil-square"></i>
-								</a> </a></td>
+								</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

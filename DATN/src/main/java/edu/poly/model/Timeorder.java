@@ -9,23 +9,24 @@ import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Shift")
-public class Shift {
+@Table(name = "Timeorder")
+public class Timeorder {
 	@Id
 	@Size(min=1)
 	String Id;
 	@Size(min=1)
-	String begintime;
-	@Size(min=1)
-	String endtime;
+	String timeline;
+	@Min(1)
+	int slot;
 	
 	@OneToMany
-	(mappedBy = "shift")
-	List<ShiftStaff> shiftStaffs;
+	(mappedBy = "timeOrder")
+	List<Bill> bills;
 }

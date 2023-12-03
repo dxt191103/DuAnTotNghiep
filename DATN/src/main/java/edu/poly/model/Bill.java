@@ -28,26 +28,40 @@ public class Bill implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
+
 	@ManyToOne
 	@JoinColumn(name = "Customer")
 	@Size(min=1)
 	Customer account;
+	
 	@Size(min=1)
 	String time;
+	
+	@ManyToOne
+	@JoinColumn(name = "Service")
+	Services service;
+
 	@Min(1)
 	Double price;
+	
 	@Size(min=1)
-	String sale;
+	String Dayorder;
+	
+	@ManyToOne
+	@JoinColumn(name = "Timeorder")
+	Timeorder timeOrder;
+
+	@ManyToOne
+	@JoinColumn(name = "Sale")
+	Sale sale;
+
 	@Min(1)
 	Double total;
 	
 	
+	
 //	@Column(nullable = false, columnDefinition = "bit default 0")
 //	boolean activated;
-	
-	@OneToMany
-	(mappedBy = "bill")
-	List<BillDetail> billDetail;
 //	boolean admin;
 //	@OneToMany(mappedBy = "account")
 //	List<Order> orders;
