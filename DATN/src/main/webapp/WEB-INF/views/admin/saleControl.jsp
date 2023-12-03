@@ -24,7 +24,7 @@
 							<div class="col row">
 								<div class="col-6">
 									<div class="form-group">
-										<form:input type="text" class="form-control" id="id" path="id"
+										<form:input type="text" class="form-control" id="code" path="code"
 											aria-describedby="usHid" placeholder="Sale ID" />
 										<small id="usHid" class="form-text text-muted">Sale
 											ID is invalid</small>
@@ -36,20 +36,6 @@
 										<small id="percentPriceHid" class="form-text text-muted">Sale
 											Percent Price is invalid</small>
 									</div>
-									<div class="form-group">
-										<form:input type="text" class="form-control" id="type"
-											path="type" aria-describedby="typeHid" placeholder="type" />
-										<small id="typeHid" class="form-text text-muted">Sale
-											Type is invalid</small>
-									</div>
-									<div class="form-group">
-										<form:input type="text" class="form-control" id="services.id"
-											path="services.id" aria-describedby="servicesHid"
-											placeholder="services.id" />
-										<small id="servicesHid" class="form-text text-muted">Service
-											is invalid</small>
-									</div>
-								</div>
 							</div>
 
 						</div>
@@ -153,8 +139,7 @@
 		<!-- footer -->
 
 
-		<footer class="footer text-center"> &copy; PS 19944 - Nguyễn
-			Quốc Huy </footer>
+		
 
 		<!-- End footer -->
 
