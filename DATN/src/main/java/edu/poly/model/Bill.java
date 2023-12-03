@@ -45,7 +45,7 @@ public class Bill implements Serializable{
 	Double price;
 	
 	@Size(min=1)
-	String Dayorder;
+	String dayorder;
 	
 	@ManyToOne
 	@JoinColumn(name = "Timeorder")
