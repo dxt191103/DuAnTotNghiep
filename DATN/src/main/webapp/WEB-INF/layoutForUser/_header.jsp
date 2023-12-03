@@ -85,10 +85,11 @@
                     </a>
                     <div class="search-form">
                         <span class="close-search"><i class="fal fa-times-circle"></i></span>
-                        <form class="search-input" action="#">
-                            <input type="text" name="search" id="searchForm" placeholder="Type and hit enter..."
+                        <form class="search-input" action="search">
+                            <input type="text" name="keywords" id="searchForm" placeholder="What do you need?"
                                 autocomplete="off">
                         </form>
+                        
                     </div>
                     <!-- shopping bag -->
                     <a  href="cart" class="bag-button">

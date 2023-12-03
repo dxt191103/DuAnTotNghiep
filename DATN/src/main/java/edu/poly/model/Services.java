@@ -1,9 +1,9 @@
 package edu.poly.model;
 
 import java.io.Serializable;
-import java.util.Date;
+
 import java.util.List;
-import java.sql.Time;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
+
 import javax.validation.constraints.Size;
 
 import lombok.Data;
@@ -44,7 +44,5 @@ public class Services implements Serializable{
 	(mappedBy = "service")
 	List<Bill> bills;
 
-//	boolean admin;
-//	@OneToMany(mappedBy = "account")
-//	List<Order> orders;
+
 }

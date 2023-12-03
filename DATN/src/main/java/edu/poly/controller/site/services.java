@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import edu.poly.model.Services;
 import edu.poly.dao.CustomerDAO;
 import edu.poly.dao.ServiceDAO;
@@ -26,7 +27,9 @@ import edu.poly.utils.SessionService;
 public class services {
 	@Autowired
 	ServiceDAO serDAO;
-
+	@Autowired
+	SessionService sessionService;
+	
 	@RequestMapping("services")
 	public String services(Model model,	@RequestParam("p") Optional<Integer> p) {
 		Pageable pageable = PageRequest.of(p.orElse(0), 4);
@@ -39,6 +42,19 @@ public class services {
 		model.addAttribute("currentPage", currentPage);
 		model.addAttribute("page", page);
 		return "home/services";
+	}
+	
+	@RequestMapping("search")
+	public String searchAndPage(Model model, @RequestParam("keywords") Optional<String> kw,
+			@RequestParam("p") Optional<Integer> p) {
+		String kwords = kw.orElse(sessionService.get("keywords"));
+		sessionService.set("keywords", kwords);
+		Pageable pageable = PageRequest.of(p.orElse(0), 4);
+		Page<Services> page = serDAO.findByKeywords("%" + kwords + "%", pageable);
+		model.addAttribute("page", page);
+
+		
+		return "home/searchServices";
 	}
 //	@RequestMapping(value = "product/detail/{id}")
 //	public String view(ModelMap model, @PathVariable("id") String id) {
