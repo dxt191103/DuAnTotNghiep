@@ -45,8 +45,8 @@ public class Bill implements Serializable{
 	Double price;
 
 	@ManyToOne
-	@JoinColumn(name = "Timeoder")
-	Timeorder timeOder;
+	@JoinColumn(name = "Timeorder")
+	Timeorder timeOrder;
 
 	@ManyToOne
 	@JoinColumn(name = "Sale")

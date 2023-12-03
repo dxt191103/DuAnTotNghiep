@@ -27,6 +27,6 @@ public class Timeorder {
 	int slot;
 	
 	@OneToMany
-	(mappedBy = "timeOder")
+	(mappedBy = "timeOrder")
 	List<Bill> bills;
 }

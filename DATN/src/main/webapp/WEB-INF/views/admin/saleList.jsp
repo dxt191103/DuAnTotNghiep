@@ -27,7 +27,7 @@
 								<td>${item.code}</td>
 								<td>${item.percentPrice}</td>
 								<td><a class='btn btn-warning btn-xs'
-									style="font-size: 14px" href="sale/edit/${item.id}"> <span
+									style="font-size: 14px" href="sale/edit/${item.code}"> <span
 										class="glyphicon glyphicon-edit"></span> <i
 										class="bi bi-pencil-square"></i>
 								</a> </a></td>
