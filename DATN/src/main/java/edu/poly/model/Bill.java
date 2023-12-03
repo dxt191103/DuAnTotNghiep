@@ -43,7 +43,10 @@ public class Bill implements Serializable{
 
 	@Min(1)
 	Double price;
-
+	
+	@Size(min=1)
+	String Dayorder;
+	
 	@ManyToOne
 	@JoinColumn(name = "Timeorder")
 	Timeorder timeOrder;

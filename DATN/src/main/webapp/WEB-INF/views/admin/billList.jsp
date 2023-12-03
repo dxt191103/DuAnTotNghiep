@@ -35,6 +35,7 @@
 								<td>${item.time}</td>
 								<td>${item.service.name}</td>
 								<td>${item.price}</td>
+								<td>${item.Dayorder}</td>
 								<td>${item.timeOrder.timeline}</td>
 								<td>${item.sale.code}</td>
 								<td>${item.total}</td>
