@@ -26,7 +26,7 @@ public class CheckOutController {
 	@RequestMapping("checkout")
 	public String checkout(Model model) {
 		model.addAttribute("cart", shoppingCartService);
-		return "redirect:/home/checkout";
+		return "/home/checkout";
 	}
 	
 }

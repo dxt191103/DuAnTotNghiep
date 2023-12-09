@@ -7,7 +7,7 @@
 <footer id="footer">
 	
 	<div class="footer-content">
-		<a href="index.html"><img
+		<a href="/home/index"><img
 			src="/forUser/imgs/footer-logo-white.png" alt="footer-logo"></a>
 		<div class="sub-heading">Design by @CBR-Themes</div>
 		<div class="slogan">Pro inimicus sapientem an, ad cibo velit.</div>

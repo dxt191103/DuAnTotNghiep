@@ -6,16 +6,16 @@ import edu.poly.model.CartItem;
 
 public interface ShoppingCartService {
 
-	CartItem add(String id);
+	CartItem add(int id);
 
 	
-	CartItem sub(String id);
+	CartItem sub(int id);
 	
-	void remove(String id);
+	void remove(int id);
 
 	
 	
-	CartItem update(String id, int qty);
+	CartItem update(int id, int qty);
 
 	
 	

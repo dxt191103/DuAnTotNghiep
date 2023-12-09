@@ -40,8 +40,9 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService{
 	}
 	
 	@Override
-	public CartItem add(String id) {
-		CartItem item = map.get(id);
+	public CartItem add(int id) {
+		String ids = Integer.toString(id);
+		CartItem item = map.get(ids);
 		if (item == null) {
 			Services product = serDao.findById(id).get();
 			item = new CartItem();
@@ -50,17 +51,17 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService{
 			item.setName(product.getName());
 			item.setPrice(product.getPrice());
 			item.setQty(1);
-			map.put(id, item);
-		} else {
-			item.setQty(item.getQty() + 1);
-		}
+			
+			map.put(ids, item);
+		} 
 		return item;
 	}
 	
 	
 	@Override
-	public CartItem sub(String id) {
-		CartItem item = map.get(id);
+	public CartItem sub(int id) {
+		String ids = Integer.toString(id);
+		CartItem item = map.get(ids);
 		if (item == null) {
 			Services product = serDao.findById(id).get();
 			item = new CartItem();
@@ -69,7 +70,8 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService{
 			item.setName(product.getName());
 			item.setPrice(product.getPrice());
 			item.setQty(1);
-			map.put(id, item);
+			
+			map.put(ids, item);
 		} else {
 			if(item.getQty() > 1) {
 				item.setQty(item.getQty() - 1);
@@ -81,13 +83,15 @@ public class ShoppingCartServiceImpl  implements ShoppingCartService{
 	}
 
 	@Override
-	public void remove(String id) {
-		map.remove(id);
+	public void remove(int id) {
+		String ids = Integer.toString(id);
+		map.remove(ids);
 	}
 
 	@Override
-	public CartItem update(String id, int qty) {
-		CartItem item = map.get(id);
+	public CartItem update(int id, int qty) {
+		String ids = Integer.toString(id);
+		CartItem item = map.get(ids);
 		item.setQty(qty);
 		return item;
 	}

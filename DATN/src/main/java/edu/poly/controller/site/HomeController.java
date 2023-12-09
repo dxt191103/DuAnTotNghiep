@@ -1,5 +1,6 @@
 package edu.poly.controller.site;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import edu.poly.model.CartItem;
+import edu.poly.service.ShoppingCartService;
 import edu.poly.utils.CookieService;
 import edu.poly.utils.ParamService;
 import edu.poly.utils.SessionService;
@@ -24,11 +26,9 @@ import edu.poly.utils.SessionService;
 @RequestMapping("home")
 public class HomeController {
 	
-	
 	// show index
 	@RequestMapping("index")
 	public String shop(Model model) {
-		
 		return "home/index";
 	}
 //	

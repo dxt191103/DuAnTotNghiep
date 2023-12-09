@@ -21,7 +21,7 @@ public class ServiceforServiceimpl implements ServiceforService{
 	}
 
 	@Override
-	public int remove(String id) {
+	public int remove(int id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -33,7 +33,7 @@ public class ServiceforServiceimpl implements ServiceforService{
 	}
 
 	@Override
-	public Services findById(String id) {
+	public Services findById(int id) {
 		// TODO Auto-generated method stub
 		for (Services services : ls) {
 			if (services.getId() == id) {
