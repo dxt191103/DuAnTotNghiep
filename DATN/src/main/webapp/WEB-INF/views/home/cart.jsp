@@ -38,38 +38,34 @@
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<th scope="col">Id</th>
 										<th scope="col">Name</th>
 										<th scope="col">Price</th>
 										<th scope="col">Qty</th>
+										<th scope="col">Total</th>
 									</tr>
 								</thead>
 								<tbody>
 								<form action="/cart/update" medthot="post">
 									
 									<c:forEach var="item" items = "${CART_ITEMS}">
-										<input type="hidden" name="id" value="${item.id}"/> 
 										<tr>
-										<td scope="col">${item.serviceid}</td>
-										<td scope="col">${item.name}</td>
-										<td scope="col">${item.price}</td>
-										<td scope="col">
-										<input name="qty" value="${item.qty}" onblur="this.form.submit()">
-										</td>
-										<td scope="col">
-										<a class="btn btn-primary btn-sm" href="/cart/del/${item.serviceid}">
-											<i class="bi bi-radioactive"></i>
-										</a>
-										</td>
-									</tr>
+										<td name="id">${item.name}</td>
+										<td>${item.price}</td>
+										<td name="qty">${item.qty}</td>
+										<td>${item.qty * item.price}</td>
+										<td><a class="btn btn-primary btn-sm" href="/home/cart/remove/${item.id}"> <i class="bi bi-x-circle"></i></a></td>
+										</tr>
+										
+										
+									
 									</c:forEach>
 								</form>
 									
 								</tbody>
 							</table>
 							<hr/>
-							<a class="btn btn-primary btn-sm" href="/cart/clear"> <i class="bi bi-x-circle"></i> Clear Cart</a>
-							<a href="services" class="text-body"><i
+							<a class="btn btn-primary btn-sm" href="/home/cart/clear"> <i class="bi bi-x-circle"></i> Clear Cart</a>
+							<a href="/home/services" class="text-body"><i
 									class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a>
 							
 
@@ -144,12 +140,12 @@
 
 									<div class="d-flex justify-content-between mb-4">
 										<p class="mb-2">Total(Incl. taxes)</p>
-										<p class="mb-2">${item.price *item.qty}</p>
+										<p class="mb-2">${total}</p>
 									</div>
 
 									<button type="button" class="btn btn-info btn-block btn-lg">
 										<div class="d-flex justify-content-between">
-											<span>${item.price *item.qty}</span> <span>Checkout <i
+											<span>${total}</span><span>Checkout <i
 												class="fas fa-long-arrow-alt-right ms-2"></i></span>
 										</div>
 									</button>
