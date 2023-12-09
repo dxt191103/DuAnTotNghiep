@@ -25,10 +25,13 @@ public class CartController {
 	ParamService param;
 	@Autowired
 	ServiceDAO daoS;
+//	@Autowired
+//	CartitemDAO cartS;
 
-	List<CartItem> list = new ArrayList<>();
+	public static List<CartItem> list = new ArrayList<>();
 	CartItem cartItem = new CartItem();
 	int qty = cartItem.getQty();
+
 	@RequestMapping("cart")
 	public String index(Model model) {
 		model.addAttribute("CART_ITEMS", list);
@@ -38,20 +41,30 @@ public class CartController {
 	}
 
 	@RequestMapping("/cart/add/{id}")
-	public String add(@PathVariable("id") String id) {
-		int a=0;
-		
+	public String add(@PathVariable("id") int id) {
+
 		for (Services sv : daoS.findAll()) {
-			if (id.equals(sv.getId())) {
+			if (id == (sv.getId())) {
 				cartItem.setId(id);
 				cartItem.setName(sv.getName());
 				cartItem.setPrice(sv.getPrice());
 				cartItem.setImage(sv.getImage());
-				cartItem.setQty(qty+1);
+				cartItem.setQty(qty);
 				cart.add(id);
-				list.add(cartItem);				
+				list.add(cartItem);
 			}
 		}
+//		for (CartItem cr : cartS.findAll()) {
+//			if (id==(cr.getId())) {
+//				cartItem.setId(id);
+//				cartItem.setName(cr.getName());
+//				cartItem.setPrice(cr.getPrice());
+//				cartItem.setImage(cr.getImage());
+//				cartItem.setQty(qty);
+//				cart.remove(id);
+//				list.remove(cartItem);			
+//			}
+//		}
 		return "forward:/home/cart";
 	}
 
@@ -62,11 +75,11 @@ public class CartController {
 //	}
 
 	@RequestMapping("/cart/remove/{id}")
-	public String remove(@PathVariable("id") String id) {
+	public String remove(@PathVariable("id") int id) {
 
 		for (CartItem cartItem : list) {
 
-			if (cartItem.getId().equals(id)) {
+			if (cartItem.getId() == id) {
 				System.err.print(id);
 				list.remove(cartItem);
 				break;
@@ -78,7 +91,7 @@ public class CartController {
 
 	@RequestMapping("/cart/update")
 	public String update() {
-		String id = param.getString("id", "0");
+		int id = param.getInt("id", 0);
 		int qty = param.getInt("qty", 0);
 		cart.update(id, qty);
 		return "redirect:/home/cart";
@@ -88,6 +101,7 @@ public class CartController {
 	public String clear() {
 		cart.clear();
 		list.clear();
-		return "forward:/home/cart";
+		return "redirect:/home/services";
 	}
+
 }

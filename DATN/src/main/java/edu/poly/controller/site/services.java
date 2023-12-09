@@ -1,5 +1,6 @@
 package edu.poly.controller.site;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,8 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import edu.poly.model.CartItem;
 import edu.poly.model.Services;
+import edu.poly.service.ShoppingCartService;
 import edu.poly.dao.CustomerDAO;
 import edu.poly.dao.ServiceDAO;
 import edu.poly.utils.CookieService;
@@ -29,6 +31,7 @@ public class services {
 	ServiceDAO serDAO;
 	@Autowired
 	SessionService sessionService;
+
 	
 	@RequestMapping("services")
 	public String services(Model model,	@RequestParam("p") Optional<Integer> p) {
