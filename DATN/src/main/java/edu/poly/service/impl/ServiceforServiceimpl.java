@@ -33,10 +33,10 @@ public class ServiceforServiceimpl implements ServiceforService{
 	}
 
 	@Override
-	public Services findById(int id) {
+	public Services findById(String id) {
 		// TODO Auto-generated method stub
 		for (Services services : ls) {
-			if (services.getId()==id) {
+			if (services.getId() == id) {
 				return services;
 			}
 		}
