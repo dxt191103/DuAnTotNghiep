@@ -9,5 +9,5 @@ public interface ServiceforService {
 	public int add(Services s);
 	public int remove(String id);
 	public List<Services> getAll();
-	public Services findById(int id);
+	public Services findById(String id);
 }
