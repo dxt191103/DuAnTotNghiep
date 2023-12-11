@@ -15,6 +15,7 @@ import edu.poly.model.CartItem;
 import edu.poly.model.Services;
 import edu.poly.service.ShoppingCartService;
 import edu.poly.utils.ParamService;
+import edu.poly.utils.SessionService;
 
 @Controller
 @RequestMapping("home")
@@ -27,6 +28,8 @@ public class CartController {
 	ServiceDAO daoS;
 //	@Autowired
 //	CartitemDAO cartS;
+	@Autowired
+	SessionService sessionService;
 
 	public static List<CartItem> list = new ArrayList<>();
 	CartItem cartItem = new CartItem();
@@ -42,7 +45,8 @@ public class CartController {
 
 	@RequestMapping("/cart/add/{id}")
 	public String add(@PathVariable("id") int id) {
-
+		cart.clear();
+		list.clear();
 		for (Services sv : daoS.findAll()) {
 			if (id == (sv.getId())) {
 				cartItem.setId(id);

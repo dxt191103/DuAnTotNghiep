@@ -22,8 +22,28 @@
 				</div>
 				<div class="card-body">
 					<div class="col row">
+
 						<c:forEach var="item" items="${CART_ITEMS}">
 							<div class="col-6">
+								<div class="form-group">
+									<p>Customer Name</p>
+									<c:if test="${!isLogin}">
+										<a class="nav-link" href="#">Account</a>
+										<ul class="sub-menu">
+											<li><a href="/home/login">Login</a></li>
+											<li><a href="/home/register">Register</a></li>
+											<li><a href="/home/change-password">Change password</a></li>
+										</ul>
+									</c:if>
+									<c:if test="${isLogin}">
+										<p>${fullname}</p>
+										<ul class="sub-menu">
+											<li><a class="text-danger" id="btnLogOff" href="/logout"
+												title="">[Logout]</a></li>
+										</ul>
+									</c:if>
+
+								</div>
 								<div class="form-group">
 									<p>Service Name</p>
 									<p>${item.name}</p>
@@ -40,8 +60,9 @@
 
 								</div>
 								<div class="form-group">
-									<label for="exampleFormControlSelect1">Oder-Time Select</label>
-									<select class="form-control" id="exampleFormControlSelect1">
+									<label for="exampleFormControlSelect1">Order-Time
+										Select</label> <select class="form-control"
+										id="exampleFormControlSelect1">
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
@@ -52,9 +73,10 @@
 										<option>8</option>
 									</select>
 								</div>
+
 								<div class="form-group">
 									<p>ToTal Price</p>
-									<p>${item.price*item.qty} $$</p>
+									<p>${item.price*item.qty}$$</p>
 
 								</div>
 
