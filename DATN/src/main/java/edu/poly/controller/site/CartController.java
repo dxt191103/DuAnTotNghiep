@@ -106,11 +106,5 @@ public class CartController {
 		list.clear();
 		return "redirect:/home/services";
 	}
-	@RequestMapping("/cart/pay")
-	public String pay(Model model) {
-		
-		model.addAttribute("message", "Pay Successfully");
-		return "redirect:/home/cart";
-	}
 
 }

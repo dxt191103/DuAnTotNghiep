@@ -13,17 +13,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.poly.config.Config;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
+
 import edu.poly.dao.BillDAO;
+import edu.poly.model.Customer;
+import edu.poly.model.Test;
 import edu.poly.service.ShoppingCartService;
 import edu.poly.utils.ParamService;
 import edu.poly.utils.SessionService;
@@ -33,6 +41,7 @@ import javax.servlet.http.HttpServlet;
 @RequestMapping("home")
 public class CheckOutController extends HttpServlet {
 	@Autowired
+
 	ShoppingCartService cart;
 	@GetMapping("/pay")
 	public String getPay() throws UnsupportedEncodingException {
@@ -109,5 +118,9 @@ public class CheckOutController extends HttpServlet {
 		queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
 		String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
 		return paymentUrl;
+
 	}
+	
+	
+	
 }

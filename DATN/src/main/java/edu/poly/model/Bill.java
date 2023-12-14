@@ -19,10 +19,14 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "Bill")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Bill implements Serializable{
 	
 	@Id
