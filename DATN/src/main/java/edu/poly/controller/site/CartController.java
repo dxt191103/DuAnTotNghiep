@@ -69,14 +69,14 @@ public class CartController {
 //				list.remove(cartItem);			
 //			}
 //		}
-		return "forward:/home/cart";
-	}
+//		return "forward:/home/cart";
+//	}
 
 //	@RequestMapping("/cart/sub/{id}")
 //	public String sub(@PathVariable("id") String id) {
 //		cart.sub(id);
-//		return "redirect:/home/cart";
-//	}
+		return "redirect:/home/cart";
+	}
 
 	@RequestMapping("/cart/remove/{id}")
 	public String remove(@PathVariable("id") int id) {
@@ -84,7 +84,6 @@ public class CartController {
 		for (CartItem cartItem : list) {
 
 			if (cartItem.getId() == id) {
-				System.err.print(id);
 				list.remove(cartItem);
 				break;
 
@@ -106,6 +105,12 @@ public class CartController {
 		cart.clear();
 		list.clear();
 		return "redirect:/home/services";
+	}
+	@RequestMapping("/cart/pay")
+	public String pay(Model model) {
+		
+		model.addAttribute("message", "Pay Successfully");
+		return "redirect:/home/cart";
 	}
 
 }

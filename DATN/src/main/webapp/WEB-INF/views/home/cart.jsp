@@ -18,8 +18,9 @@
 						Your Order <a href="/home/services"
 							class="btn btn-success float-right">Services List</a>
 					</h3>
-					<div class="bg-success text-light px-3">${message}</div>
+
 				</div>
+				<h5>${message}</h5>
 				<div class="card-body">
 					<div class="col row">
 
@@ -28,12 +29,7 @@
 								<div class="form-group">
 									<p>Customer Name</p>
 									<c:if test="${!isLogin}">
-										<a class="nav-link" href="#">Account</a>
-										<ul class="sub-menu">
-											<li><a href="/home/login">Login</a></li>
-											<li><a href="/home/register">Register</a></li>
-											<li><a href="/home/change-password">Change password</a></li>
-										</ul>
+										<a class="nav-link" href="/home/login">Account</a>
 									</c:if>
 									<c:if test="${isLogin}">
 										<p>${fullname}</p>
@@ -56,13 +52,13 @@
 								</div>
 								<div class="form-group">
 									<p>Order Day</p>
-									<input type="date" id="orderday">
+									<input type="date" id="orderday" name="dayorder">
 
 								</div>
 								<div class="form-group">
 									<label for="exampleFormControlSelect1">Order-Time
 										Select</label> <select class="form-control"
-										id="exampleFormControlSelect1">
+										id="exampleFormControlSelect1" name="TimeOrder">
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
@@ -76,7 +72,7 @@
 
 								<div class="form-group">
 									<p>ToTal Price</p>
-									<p>${item.price*item.qty}$$</p>
+									<p name="total">${item.price*item.qty}$$</p>
 
 								</div>
 
@@ -90,7 +86,7 @@
 							<a href="/home/cart/clear">Clear Cart</a>
 						</button>
 						<button type="submit" class="btn btn-danger">
-							<a href="/home/checkout">Checkout</a>
+							<a href="#">Checkout</a>
 						</button>
 
 					</div>

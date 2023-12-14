@@ -76,7 +76,7 @@
                   <h4 class="mb-1 me-1">${item.price}$</h4>
                 </div>
                 <div class="d-flex flex-column mt-4">
-                  <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                  <button class="btn btn-outline-primary btn-sm mt-2" type="button" name="id" id="id">
                     <a href="/home/cart/add/${item.id}">Add to wishlist</a>            
                   </button>
                 </div>

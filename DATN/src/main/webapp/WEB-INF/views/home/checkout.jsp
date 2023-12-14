@@ -7,37 +7,64 @@
 <!-- Shopping Cart Section Begin -->
 <section class="checkout-section spad">
 	<div class="container">
-		<form action="order-detail" method="post" class="checkout-form">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<h4>Your Information</h4>
-					<div class="row">
-						<div class="col">
-							<label for="fir">Address<span>*</span></label> <input type="text"
-								id="fir" name="address">
-						</div>
-					</div>
-					<div class="place-order">
-						<h4>Your Order</h4>
-						<div class="order-total">
-							<ul class="order-table">
-								<li>Product <span>Total</span></li>
-								<c:forEach var="item" items="${cart.items}">
-									<li class="fw-normal">${item.name }x${item.qty } <span>$${item.price
-											* item.qty}</span></li>
-								</c:forEach>
-								<li class="total-price">Total <span>$${cart.total }</span></li>
-							</ul>
+		<div class="card-body">
+			<div class="col row">
+				<h5>${message} </h5>
+				<c:forEach var="item" items="${CART_ITEMS}">
+					<div class="col-6">
+						<div class="form-group">
+							<p>Customer Name</p>
+							<c:if test="${!isLogin}">
+								<a class="nav-link" href="/home/login">Account</a>
+							</c:if>
+							<c:if test="${isLogin}">
+								<p>${fullname}</p>
+								<ul class="sub-menu">
+									<li><a class="text-danger" id="btnLogOff" href="/logout"
+										title="">[Logout]</a></li>
+								</ul>
+							</c:if>
 
-							<div class="order-btn">
-								<button type="submit" class="site-btn place-btn">Place
-									Order</button>
-							</div>
 						</div>
+						<div class="form-group">
+							<p>Service Name</p>
+							<p>${item.name}</p>
+
+						</div>
+						<div class="form-group">
+							<p>Service Price</p>
+							<p>${item.price}</p>
+
+						</div>
+						<div class="form-group">
+							<p>Order Day</p>
+							<p></p>
+
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Order-Time Select</label>
+
+						</div>
+
+						<div class="form-group">
+							<p>ToTal Price</p>
+							<p name="total">${item.total}$$</p>
+
+						</div>
+
 					</div>
+				</c:forEach>
+				<div class="card-footer text-muted">
+
+					<button type="submit" class="btn btn-danger">
+						<a href="/home/pay">Pay</a>
+					</button>
+
 				</div>
+
+
 			</div>
-		</form>
+		</div>
 	</div>
 </section>
 <!-- Shopping Cart Section End -->
