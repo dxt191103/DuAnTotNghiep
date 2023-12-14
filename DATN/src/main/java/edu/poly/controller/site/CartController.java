@@ -37,7 +37,7 @@ public class CartController {
 
 	@RequestMapping("cart")
 	public String index(Model model) {
-		model.addAttribute("CART_ITEMS", list);
+		model.addAttribute("item", cartItem);
 		model.addAttribute("total", cart.getAmount());
 
 		return "home/cart";
