@@ -86,7 +86,7 @@
 							<a href="/home/cart/clear">Clear Cart</a>
 						</button>
 						<button type="submit" class="btn btn-danger">
-							<a href="#">Checkout</a>
+							<a href="/home/pay">Checkout</a>
 						</button>
 
 					</div>
