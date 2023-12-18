@@ -15,6 +15,7 @@ import edu.poly.model.CartItem;
 import edu.poly.model.Services;
 import edu.poly.service.ShoppingCartService;
 import edu.poly.utils.ParamService;
+import edu.poly.utils.SessionService;
 
 @Controller
 @RequestMapping("home")
@@ -25,10 +26,13 @@ public class CartController {
 	ParamService param;
 	@Autowired
 	ServiceDAO daoS;
+//	@Autowired
+//	CartitemDAO cartS;
 
-	List<CartItem> list = new ArrayList<>();
+	public static List<CartItem> list = new ArrayList<>();
 	CartItem cartItem = new CartItem();
 	int qty = cartItem.getQty();
+
 	@RequestMapping("cart")
 	public String index(Model model) {
 		model.addAttribute("CART_ITEMS", list);
@@ -38,36 +42,48 @@ public class CartController {
 	}
 
 	@RequestMapping("/cart/add/{id}")
-	public String add(@PathVariable("id") String id) {
-		int a=0;
-		
+	public String add(@PathVariable("id") int id) {
+		cart.clear();
+		list.clear();
 		for (Services sv : daoS.findAll()) {
-			if (id.equals(sv.getId())) {
+			if (id == (sv.getId())) {
 				cartItem.setId(id);
 				cartItem.setName(sv.getName());
 				cartItem.setPrice(sv.getPrice());
 				cartItem.setImage(sv.getImage());
-				cartItem.setQty(qty+1);
-				cart.add(cartItem);
-				list.add(cartItem);				
+
+				cartItem.setQty(qty);
+				cart.add(id);
+				list.add(cartItem);
+
 			}
 		}
-		return "forward:/home/cart";
-	}
+//		for (CartItem cr : cartS.findAll()) {
+//			if (id==(cr.getId())) {
+//				cartItem.setId(id);
+//				cartItem.setName(cr.getName());
+//				cartItem.setPrice(cr.getPrice());
+//				cartItem.setImage(cr.getImage());
+//				cartItem.setQty(qty);
+//				cart.remove(id);
+//				list.remove(cartItem);			
+//			}
+//		}
+//		return "forward:/home/cart";
+//	}
 
 //	@RequestMapping("/cart/sub/{id}")
 //	public String sub(@PathVariable("id") String id) {
 //		cart.sub(id);
-//		return "redirect:/home/cart";
-//	}
+		return "redirect:/home/cart";
+	}
 
 	@RequestMapping("/cart/remove/{id}")
-	public String remove(@PathVariable("id") String id) {
+	public String remove(@PathVariable("id") int id) {
 
 		for (CartItem cartItem : list) {
 
-			if (cartItem.getId().equals(id)) {
-				System.err.print(id);
+			if (cartItem.getId() == id) {
 				list.remove(cartItem);
 				break;
 
@@ -88,6 +104,7 @@ public class CartController {
 	public String clear() {
 		cart.clear();
 		list.clear();
-		return "forward:/home/cart";
+		return "redirect:/home/services";
 	}
+
 }

@@ -6,12 +6,35 @@ import edu.poly.model.CartItem;
 
 public interface ShoppingCartService {
 
-	double getAmount();
-	int getCount();
-	Collection<CartItem> getAllItems();
-	void clear();
-	CartItem update(int serID, int qty);
+	CartItem add(int id);
+
+	
+	CartItem sub(int id);
+	
 	void remove(int id);
-	void add(CartItem item);
+
+	
+	
+	CartItem update(int id, int qty);
+
+	
+	
+	void clear();
+
+	
+	
+	Collection<CartItem> getItems();
+
+	
+	int getCount();
+
+	
+	
+	double getAmount();
+	
+	
+	
+	
+	double getTotal();
 	
 }

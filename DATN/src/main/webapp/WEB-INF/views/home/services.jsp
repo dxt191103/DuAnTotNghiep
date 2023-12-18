@@ -184,6 +184,7 @@ body {
 		<div class="spacer-clearfix" style="height: 60px;"></div>
 	</div>
 
+
 	<!-- day spa packages -->
 	<div class="spa-packages container-fluid">
 		<div class="spacer-clearfix" style="height: 70px;"></div>
@@ -237,6 +238,7 @@ body {
 					<a class="link-text text-linear-effect purchase-btn">purchase</a>
 				</div>
 			</div>
+
 		</div>
 		<div class="spacer-clearfix" style="height: 80px;"></div>
 	</div>
