@@ -101,19 +101,25 @@
 	
 	
 	<div class="modal-dialog-box" style="display: none;">
-        <div class="inner">
-            <div class="dialog-img"><img src="/forUser/imgs/popup-img.jpg" alt="Dialog Img" style="height: 410px;"></div>
-            <span class="close-icon"><i class="fal fa-times"></i></span>
-            <div class="content">
-                <h5 class="pre-heading">Get Our Most</h5>
-                <h3 class="heading">Exclusive Offers</h3>
-                <p class="sub-heading">Get up to 60% Extra Off Your First Deal Use code WELCOME at checkout for 20%
-                    Extra
-                    Off Local & Getaways, or 10% Extra Off Goods.
-                </p>
-            </div>
-        </div>
-    </div>
+		<div class="inner">
+			<div class="dialog-img">
+				<img src="/forUser/imgs/popup-img.jpg" alt="Dialog Img"
+					style="height: 410px;">
+			</div>
+			<span class="close-icon"><i class="fal fa-times"></i></span>
+			<div class="content">
+				<h5 class="pre-heading">Get Our Most</h5>
+				<h3 class="heading">Exclusive Offers</h3>
+				<p class="sub-heading">Get up to 60% Extra Off Your First Deal
+					Use code WELCOME at checkout for 20% Extra Off Local & Getaways, or
+					10% Extra Off Goods.</p>
+				<form action="#">
+					<input type="text" placeholder="Your E-mail">
+					<button class="btn book-now-btn">Now</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
     <!-- Js Plugins -->
     <script src="/forUser/vendor/js/jquery-v3.4.1.min.js"></script>
