@@ -48,7 +48,7 @@ public class CartController {
 				cartItem.setPrice(sv.getPrice());
 				cartItem.setImage(sv.getImage());
 				cartItem.setQty(qty+1);
-				cart.add(id);
+				cart.add(cartItem);
 				list.add(cartItem);				
 			}
 		}
@@ -78,7 +78,7 @@ public class CartController {
 
 	@RequestMapping("/cart/update")
 	public String update() {
-		String id = param.getString("id", "0");
+		int id = param.getInt("id", 0);
 		int qty = param.getInt("qty", 0);
 		cart.update(id, qty);
 		return "redirect:/home/cart";
