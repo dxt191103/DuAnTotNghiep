@@ -12,8 +12,9 @@
                         <div class="row">
                             <form action="#" class="maps-form col-md-12 col-lg-7">
                                 <div class="row">
+                                <h5 class="text-danger">${message}</h5>
                                     <div class="form-input col-sm-6 your-name">
-                                        <input type="text" name="name" id="name" placeholder="Full Name">
+                                        <input type="text" name="name" id="name" placeholder="fullname">
                                         <div class="error">( <span>*</span> )</div>
                                     </div>
                                     <div class="form-input col-sm-6 your-email">
@@ -21,7 +22,7 @@
                                         <div class="error">( <span>*</span> )</div>
                                     </div>
                                     <div class="form-input col-sm-6 your-phone-number">
-                                        <input type="text" name="phone-number" id="phone-number"
+                                        <input type="text" name="phone-number" id="phone"
                                             placeholder="Phone Number">
                                         <div class="error">( <span>*</span> )</div>
                                     </div>
@@ -41,8 +42,7 @@
                                     <textarea name="your-message" id="yourMessage"
                                         placeholder="Your Message"></textarea>
                                     <div class="form-input col-12 submit-btn">
-                                        <input value="contact us" id="appointment-submit" name="submit"
-                                            class="btn book-now-btn" disabled="disabled" style="opacity: 1;">
+                                       <button type="submit" class="site-btn login-btn">Confirm</button>
                                     </div>
                                 </div>
                             </form>

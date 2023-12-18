@@ -48,15 +48,19 @@ public class LoginController {
 			if (!user.getPassword().equals(password)) {
 				model.addAttribute("message", "Wrong Password!");
 			} else {
-				sessionService.set("user", user);
-				if (remember) {
-					cookieService.add("username", user.getUsername(), 10);
-					cookieService.add("password", user.getPassword(), 10);
-				} else {
-					cookieService.remove("username");
-					cookieService.remove("password");
+				if (username.equals("ADMINSys,")) {
+					return "admin/index";
+				}else {
+					sessionService.set("user", user);
+					if (remember) {
+						cookieService.add("username", user.getUsername(), 10);
+						cookieService.add("password", user.getPassword(), 10);
+					} else {
+						cookieService.remove("username");
+						cookieService.remove("password");
+					}
+					return "home/login";
 				}
-				return "home/login";
 			}
 		} catch (Exception e) {
 			model.addAttribute("message", "Account is invalid!");
