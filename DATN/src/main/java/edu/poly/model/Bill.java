@@ -31,7 +31,6 @@ public class Bill implements Serializable{
 
 	@ManyToOne
 	@JoinColumn(name = "Customer")
-	@Size(min=1)
 	Customer account;
 	
 	@Size(min=1)
@@ -41,7 +40,7 @@ public class Bill implements Serializable{
 	@JoinColumn(name = "Service")
 	Services service;
 
-	@Min(1)
+	
 	Double price;
 	
 	@Size(min=1)

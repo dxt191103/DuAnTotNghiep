@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -37,6 +38,7 @@ public class CheckOutController extends HttpServlet {
 	ParamService paramService;
 	@Autowired
 	ShoppingCartService cart;
+	
 	@GetMapping("/pay")
 	public String getPay() throws UnsupportedEncodingException {
 		String vnp_Version = "2.1.0";
@@ -114,14 +116,4 @@ public class CheckOutController extends HttpServlet {
 		return paymentUrl;
 	}
 	
-	@RequestMapping("/param")
-	public String getParam() {
-		return "forward:home/cart";
-	}
-	
-	@PostMapping("/param")
-	public void postParam() {
-		String param = paramService.getString("dayorder", "");
-		System.err.println(param);
-	}
 }
