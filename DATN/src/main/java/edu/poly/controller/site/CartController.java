@@ -28,8 +28,6 @@ public class CartController {
 	ServiceDAO daoS;
 //	@Autowired
 //	CartitemDAO cartS;
-	@Autowired
-	SessionService sessionService;
 
 	public static List<CartItem> list = new ArrayList<>();
 	CartItem cartItem = new CartItem();

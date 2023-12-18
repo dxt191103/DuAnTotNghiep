@@ -29,26 +29,21 @@
 							<div class="col-6">
 								<div class="form-group">
 									<p>Customer Name</p>
-									<c:if test="${!isLogin}">
-										<a class="nav-link" href="/home/login">Account</a>
-									</c:if>
 									<c:if test="${isLogin}">
-										<p>${fullname}</p>
-										<ul class="sub-menu">
-											<li><a class="text-danger" id="btnLogOff" href="/logout"
-												title="">[Logout]</a></li>
-										</ul>
+										<input type="text" style="border: none;" name="cusname" value="${fullname}" readonly>
+										<input type="hidden" style="border: none;" name="name" value="${username}" readonly>
 									</c:if>
 
 								</div>
 								<div class="form-group">
+									<input type="hidden" style="border: none;" name="id" value="${item.id}" readonly>
 									<p>Service Name</p>
-									<p>${item.name}</p>
+									<input type="text" style="border: none;" name="sername" value="${item.name}" readonly>
 
 								</div>
 								<div class="form-group">
 									<p>Service Price</p>
-									<p>${item.price}</p>
+									<input type="text" style="border: none;" name="price" value="${item.price}" readonly>
 
 								</div>
 								<div class="form-group">
@@ -59,21 +54,26 @@
 								<div class="form-group">
 									<label for="exampleFormControlSelect1">Order-Time
 										Select</label> <select class="form-control"
-										id="exampleFormControlSelect1" name="TimeOrder">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
+										id="exampleFormControlSelect1" name="timeOrder">
+										<option value="01">8:30</option>
+										<option value="02">2</option>
+										<option value="03">3</option>
+										<option value="04">4</option>
+										<option value="05">5</option>
+										<option value="06">6</option>
+										<option value="07">7</option>
+										<option value="08">8</option>
 									</select>
 								</div>
 
 								<div class="form-group">
 									<p>ToTal Price</p>
-									<p name="total">${item.price*item.qty}</p>
+									<input type="text" style="border: none;" name="total" value="${item.price}" readonly>
+
+								</div>
+								<div class="form-group">
+									<p>Sale Code</p>
+									<input type="text" id="sale" name="sale">
 
 								</div>
 
@@ -83,15 +83,12 @@
 
 					</div>
 					<div class="card-footer text-muted">
-						<button type="submit" class="btn btn-danger">
+						<button type="submit" class="btn btn-success">
 							<a href="/home/cart/clear">Clear Cart</a>
 						</button>
-						<button type="submit" class="btn btn-danger">
-							<a href="/home/pay">Checkout</a>
 						</button>
-						<!--Param chỗ này -->
-						<button type="submit" class="btn btn-danger">
-							<a>Param</a>
+						<button type="submit" class="btn btn-success">
+							<a >Checkout</a>
 						</button>
 											
 					</div>
