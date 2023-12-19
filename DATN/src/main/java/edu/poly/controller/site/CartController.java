@@ -51,9 +51,11 @@ public class CartController {
 				cartItem.setName(sv.getName());
 				cartItem.setPrice(sv.getPrice());
 				cartItem.setImage(sv.getImage());
+
 				cartItem.setQty(qty);
 				cart.add(id);
 				list.add(cartItem);
+
 			}
 		}
 //		for (CartItem cr : cartS.findAll()) {

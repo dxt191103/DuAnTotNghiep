@@ -59,6 +59,7 @@ public class RegisterController {
 			cusDAO.save(item);
 			model.addAttribute("message", "Mọi thứ hợp lệ!");
 		}
+		
 		return "redirect:/home/login";
 	}
 
