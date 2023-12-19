@@ -16,12 +16,10 @@
 				<table class="table text-center">
 					<thead>
 						<tr>
-							<th style="font-weight: bolder; font-size: 18px">ID</th>
 							<th style="font-weight: bolder; font-size: 18px">Name</th>
 							<th style="font-weight: bolder; font-size: 18px">Birthday</th>
 							<th style="font-weight: bolder; font-size: 18px">Address</th>
-							<th style="font-weight: bolder; font-size: 18px">Phone</th>
-							<th style="font-weight: bolder; font-size: 18px">Image</th>
+							<th style="font-weight: bolder; font-size: 18px">Phone</th>					
 							<th style="font-weight: bolder; font-size: 18px">Email</th>
 							<th style="font-weight: bolder; font-size: 18px">Experience</th>
 							<th style="font-weight: bolder; font-size: 18px">Role</th>
@@ -31,13 +29,12 @@
 					<tbody>
 						<c:forEach var="item" items="${page.content}">
 							<tr>
-								<td>${item.id}</td>
+
 								<td>${item.name}</td>
 								<td>${item.birthday}</td>
 								<td>${item.address}</td>
 								<td>${item.phone}</td>
-								<td><img src="/forUser/img/products/${item.image}" alt=""
-									width=50% /></td>
+
 								<td>${item.mail}</td>
 								<td>${item.experience}</td>
 								<td>${item.role.name}</td>

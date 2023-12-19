@@ -94,35 +94,9 @@
                     <!-- shopping bag -->
                     <a  href="cart" class="bag-button">
                         <span class="bag-icon nav-icon">
-                            <i class="fal fa-shopping-bag"><span class="badge badge-danger">2</span></i>
+                            <i class="fal fa-shopping-bag"></i>
                         </span>
-                        <div class="shop-cart">
-                            <div class="shop-cart-item">
-                                <img src="/forUser/imgs/products/product-1.jpg" alt="product-1">
-                                <p class="product-info">
-                                    The Ordinary Coverage Foundation<br>
-                                    <span class="quantity">1 Ã
-                                        <span class="amount">$<span class="price">215.00</span></span>
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="shop-cart-item">
-                                <img src="/forUser/imgs/products/product-2.jpg" alt="product-2">
-                                <p class="product-info">
-                                    SkinStore Holiday Collection<br>
-                                    <span class="quantity">5 Ã
-                                        <span class="amount">$<span class="price">75.99</span></span>
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="shop-cart-total">
-                                <strong>Subtotal: </strong><span>$594.95</span>
-                            </div>
-                            <div class="shop-cart-button">
-                                <a href="cart" class="btn view-btn">view cart</a>
-                                <a href="checkout" class="btn checkout-btn">checkout</a>
-                            </div>
-                        </div>
+                        
                     </a>
                     <!-- bars icon -->
                     <a class="slide-icon">
