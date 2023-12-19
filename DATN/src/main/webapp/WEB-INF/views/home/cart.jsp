@@ -55,14 +55,14 @@
 									<label for="exampleFormControlSelect1">Order-Time
 										Select</label> <select class="form-control"
 										id="exampleFormControlSelect1" name="timeOrder">
-										<option value="01">8:30</option>
-										<option value="02">2</option>
-										<option value="03">3</option>
-										<option value="04">4</option>
-										<option value="05">5</option>
-										<option value="06">6</option>
-										<option value="07">7</option>
-										<option value="08">8</option>
+										<option value="01">7:30</option>
+										<option value="02">09:00</option>
+										<option value="03">10:30</option>
+										<option value="04">13:00</option>
+										<option value="05">14:30</option>
+										<option value="06">16:00</option>
+										<option value="07">19:00</option>
+										<option value="08">20:00</option>
 									</select>
 								</div>
 
